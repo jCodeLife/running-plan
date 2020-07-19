@@ -55,7 +55,7 @@ article > *{
     height: 100px;
 } 
 .day4img{
-    width: 50%;
+    width: 70%;
 }
 section.one{
     position: relative;
@@ -66,4 +66,15 @@ section.one{
     right: 5px;
     top: 5px;
     /* left: 0px; */
+}
+article a:hover{
+    color: #F00;
+}
+a:link{
+    text-decoration: none;
+    color: #000; 
+}
+a:visited {
+    text-decoration: none;
+    color: #3c3c3c;
 }
