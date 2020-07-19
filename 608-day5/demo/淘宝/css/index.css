@@ -376,3 +376,38 @@ a:visited {
 .nav-body .nav-body-nav .nav-body-nav-main ul li.three:hover::after{
     left: .8em;
 }
+.nav-body-body{
+    width: 1190px;
+    height: 522px;
+    box-sizing: border-box;
+}
+
+.nav-body-body .classify-list{
+    position: relative;
+    width: 190px;
+    height: 100%;
+    border: 1px solid #ff5000;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 0;
+    
+}
+.nav-body-body .classify-list li{
+    line-height: 32px;
+    height: 32px;
+    color: #666;    
+    font-weight: 400;
+    margin-left: -18px;
+}
+.nav-body-body .classify-list li *{
+    font-size: 14px;
+}
+.nav-body-body .classify-list li:hover a{
+    background-color: #ffe4dc;
+    color: #ff5000;
+}
+.nav-body-body .classify-list li [class="iconfont"]{
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+}

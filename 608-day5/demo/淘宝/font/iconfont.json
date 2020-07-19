@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "584241",
+      "name": "右箭头",
+      "font_class": "iconfonti",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "584251",
+      "name": "右箭头",
+      "font_class": "iconfontjiantou5",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "1833862",
+      "name": "左箭头",
+      "font_class": "zuojiantou",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "4770758",
+      "name": "左箭头",
+      "font_class": "zuojiantou1",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "5037719",
+      "name": "右箭头",
+      "font_class": "youjiantou",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "7148955",
+      "name": "右箭头",
+      "font_class": "youjiantou1",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "7524658",
+      "name": "左箭头",
+      "font_class": "zuojiantou2",
+      "unicode": "e771",
+      "unicode_decimal": 59249
+    },
+    {
+      "icon_id": "10515595",
+      "name": "左箭头",
+      "font_class": "zuojiantou-copy",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
       "icon_id": "383602",
       "name": "放大镜",
       "font_class": "fangdajing",
