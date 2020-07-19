@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin合并</title>
+    <style>        
+        .one {
+            background-color: pink;
+            height: 20px;
+            /* margin-bottom: 100px; */
+        }
+        .two {
+            background-color: purple;
+            height: 20px;
+            /* 通过计算来处理margin合并 */
+            margin-top: 200px;
+        }
+        .wrap{
+            /* 触发bfc */
+            /* overflow: hidden; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 这里有更改结构哦 -->
+    <!-- <div class="one"></div>
+    <div class="wrap">        
+        <div class="two"></div>
+    </div> -->
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+</html>
