@@ -57,6 +57,9 @@ article > *{
 .day4img{
     width: 80%;
 }
+.day6img{
+    width: 31%;
+}
 section.one{
     position: relative;
 }
@@ -72,9 +75,9 @@ article a:hover{
 }
 a:link{
     text-decoration: none;
-    color: #000; 
+    color: #3c3c3c;
 }
 a:visited {
     text-decoration: none;
-    color: #3c3c3c;
+    
 }

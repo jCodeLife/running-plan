@@ -411,3 +411,61 @@ a:visited {
     right: 10px;
     font-size: 12px;
 }
+
+/* 主体右边区域-个人登录部分 */
+.col-right{
+    width: 290px;
+    height: 522px;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+.col-right .member{
+    width: 290px;
+    height: 145px;
+    background-image: url(../imgs/user_bg.png);
+    background-repeat: no-repeat;
+    border: green 1px solid;
+}
+.col-right .member .member-avatar-box{
+    margin: 2px auto;
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+}
+.col-right .member .member-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    
+}
+.col-right .member .hi-box{
+    width: 290px;
+    height: 16px;
+    /* border: 1px solid red; */
+}
+.col-right .member .hi{
+    display: block;
+    height: 14px;
+    line-height: 14px;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    /* border:1px solid green; */
+}
+.col-right .member .member-tjb-club-box{
+    width: 290px;
+    border: springgreen 1px solid ;
+    margin: 0 auto;
+}
+.col-right .member .member-tjb-club-box div{
+    display: inline-block;
+    font-size: 12px;    
+    
+}
+.col-right .member .member-tjb-club-box div span{
+    display: inline-block;
+    /* margin: 0 auto; */
+    border: 1px solid red;
+   
+}
