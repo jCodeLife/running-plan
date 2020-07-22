@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位实现两栏布局</title>
+    <style>
+        .wrap{
+            position: relative;
+        }
+        .right{
+            height: 100px;
+            background-color:#F56C6C;  
+            margin-left: 100px;         
+        }        
+        .left{
+            width: 100px;
+            height: 100px;
+            background-color:#909399;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>
