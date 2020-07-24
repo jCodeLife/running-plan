@@ -1,0 +1,37 @@
+{
+  "id": "1965714",
+  "name": "running-plan",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "554452",
+      "name": "向上箭头",
+      "font_class": "iconset0418",
+      "unicode": "e729",
+      "unicode_decimal": 59177
+    },
+    {
+      "icon_id": "1189741",
+      "name": "向上箭头_圈",
+      "font_class": "xiangshangjiantouquan",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "1721699",
+      "name": "向上箭头",
+      "font_class": "up-arrow",
+      "unicode": "e6d2",
+      "unicode_decimal": 59090
+    },
+    {
+      "icon_id": "9523653",
+      "name": "向上箭头",
+      "font_class": "xiangshangjiantou",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五环</title>
+    <style>
+        .wrap{
+            width: 500px;
+            height: 300px;
+            /* border: 1px solid red; */
+            margin:100px auto;
+            position: relative;
+        }
+        .wrap > *{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .wrap .one{
+            border:4px solid #67C23A;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        .wrap .two{
+            border:4px solid #E6A23C;
+            top: 0;
+            left: 80px;
+            z-index: 2;
+        }
+        .wrap .three{
+            border:4px solid #F56C6C;
+            top: 0;
+            left: 160px;
+        }
+        .wrap .four{
+            border:4px solid #909399;
+            top: 80px;
+            left: 40px;
+            z-index: 2;
+        }
+        .wrap .five{
+            border:4px solid #000000;
+            top: 80px;
+            left: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four"></div>
+        <div class="five"></div>
+    </div>
+</body>
+
+</html>
