@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        // n的阶层=n*(n-1)的阶层，
+        // (n-1)的阶层=(n-1)*(n-2)的阶层，
+        // .....
+        // 一直到
+        // n=1时或者n=0时得出结果（出口）
+
+function mul(n){
+    if(n==0||n==1){
+        return 1;
+    }
+    return n*arguments.callee(n-1);
+}
+        // console.log(mul(20));
+
+        // function fn(){
+        //     f = 10;
+        //     function f(){
+        //         var f = 11;
+        //     }
+        //     var f = 12;
+        //     return f;
+        // }
+        // console.log(fn());// 12
+
+
+        // var temp = (function() {
+        //     var num = 0;
+        //     function inner() {
+        //         console.log(++num);
+        //     }
+        //     return inner;
+        // }());
+        // temp();
+        // temp();
+        // temp();
+
+            
+        // function bytesLengh(str) {
+        //     var count = str.length;
+        //     for (var i = 0; i < str.length; i++) {
+        //         if (str.charCodeAt(i) > 255){
+        //             count++;
+        //         }
+        //     }
+        //     return count;
+        // }
+
+
+    </script>
 </body>
+
 </html>
