@@ -15,12 +15,12 @@
         // 一直到
         // n=1时或者n=0时得出结果（出口）
 
-function mul(n){
-    if(n==0||n==1){
-        return 1;
-    }
-    return n*arguments.callee(n-1);
-}
+        // function mul(n){
+        //     if(n==0||n==1){
+        //         return 1;
+        //     }
+        //     return n*arguments.callee(n-1);
+        // }
         // console.log(mul(20));
 
         // function fn(){
@@ -45,7 +45,7 @@ function mul(n){
         // temp();
         // temp();
 
-            
+
         // function bytesLengh(str) {
         //     var count = str.length;
         //     for (var i = 0; i < str.length; i++) {
@@ -57,6 +57,37 @@ function mul(n){
         // }
 
 
+        // //定义构造函数
+        // function Person(name, gender, age) {
+        //     this.name = name;
+        //     this.gender = gender;
+        //     this.age = age;
+        // }
+        // //原型Person.prototype上的属性和方法可以给后代使用
+        // Person.prototype.job = "teacher";
+        // Person.prototype.school = "前一中";
+        // Person.prototype.study = function (skill){
+        //     console.log("Get new skill:" + skill);
+        // }
+        // // 生成对象
+        // var tom = new Person("tom", "man", 20);
+        // var alice = new Person("alice", "famale", 22);
+        // console.log(tom.job);
+        // console.log(alice.job);
+
+
+
+//构造器
+function Student(name, gender, score) {
+    this.name = name;
+    this.gender = gender;
+    this.score = score;
+}
+//原型中共有属性和方法
+Student.prototype.qulity = 100;
+Student.prototype.sumScore = function () {
+    return this.score + this.qulity;
+}
     </script>
 </body>
 
