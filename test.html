@@ -77,17 +77,34 @@
 
 
 
-//构造器
-function Student(name, gender, score) {
-    this.name = name;
-    this.gender = gender;
-    this.score = score;
-}
-//原型中共有属性和方法
-Student.prototype.qulity = 100;
-Student.prototype.sumScore = function () {
-    return this.score + this.qulity;
-}
+        //构造器
+        // function Student(name, gender, score) {
+        //     this.name = name;
+        //     this.gender = gender;
+        //     this.score = score;
+        // }
+        // //原型中共有属性和方法
+        // Student.prototype.qulity = 100;
+        // Student.prototype.sumScore = function () {
+        //     return this.score + this.qulity;
+        // }
+
+
+        // 圣杯继承
+        // Son方法的子孙继承Father方法原型上的属性和方法。
+        // var inherit = (function(){
+        //     var _F = function(){};//定义中间函数
+        //     return function(Son,Father){
+        //         _F.prototype = Father.Prototype;//让_F的原型指向Father的原型
+        //         Son.prototype = new _F();//让Son的原型指向_F生成的对象，Son的子孙可以用Son方法、_F里的方法和Father原型的方法
+        //         Son.prototype.constructor = Son;//将构造方式转回来        
+        //     }
+        // }());
+        // inherit()
+
+     
+        
+
     </script>
 </body>
 
