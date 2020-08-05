@@ -101,9 +101,117 @@
         //     }
         // }());
         // inherit()
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sayInfo = function(){
+        //         console.log("我叫" + this.name + ",我今年" + this.ag + "碎了");
+        //     };
+        //     console.log(this);
+        // }
+        // var alice = new Person("Alice",20);
+        // alice.sayInfo();
+        // Person();
 
-     
+
+        // var a = "window";
+        // var obj = {
+        //     a: "obj",
+        //     fn: function () {
+        //         console.log(this.a)
+        //     }
+        // }
+        // var fn1 = obj.fn
+        // fn1()//window
+
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     console.log(this);
+        // }
+        // var alice = new Person("Alice",20);
+
+        // function fn1(){
+        //     console.log(this);
+        // }
+        // function fn2(){}
+        // var arr = [fn1,fn2]
+        // arr[0]();
+
+        // var a = 1;
+        // var b = 1;
+        // var obj = {
+        //     a: 2,
+        //     b: 2
+        // }
+        // function fn(x,y) {
+        //     console.log(this.a+this.b);
+        // }
+        // fn();//window
+        // fn.call(obj);//obj
+
+        // var alice = {
+        //     name: "alice",
+        //     age: 10,
+        //     English: 100,
+        //     qulity: 90
+        // }
+        // function sum(a, b) {
+        //     console.log(this.English + this.qulity);
+        // }
+        // sum.call(alice, 1, 2);//机选alice的总分
+        var obj = {
+            name: 'obj'
+        }
+        function fn() {
+            console.log(this);
+            console.log(arguments);
+        }
+        // Function.prototype._call = function () {
+        //     var _obj = arguments[0] || window;//传入的第一个参数为对象，没传入或者null或者undefined默认为window            
+        //     _obj.fn = this;//将当前函数赋值给对象的一个属性            
+        //     // 执行对象里面的函数_obj.fn（），这样通过函数来调用，this就指向这个函数。但是里面的参数得通过for循环获得。
+        //     var _args = [];
+        //     for (var i = 1; i < arguments.length; i++) {
+        //         _args.push("arguments[" + i + "]");
+        //     }
+        //     var _str = _args.join(",");
+        //     // console.log(_str);//'arguments[1],arguments[2],arguments[3],arguments[4],arguments[5]'
+        //     var result = eval('_obj.fn(' + _str + ')');
+        //     delete _obj.fn;
+        //     return result;
+        // }
+        // fn._call(obj, 1, 2, 3, 4);
+
+
+
+
+
+        // 用es6比较方便
+
+// Function.prototype._call = function () {
+//     let params = Array.from(arguments);//得到所以实参数组
+//     let _obj = params.splice(0, 1)[0];//获取第一位作为对象，即this指向
+//     _obj.fn = this
+//     var result = _obj.fn(...params);//splice截取了第一位，所以原数组中没有第一位了，直接可以调用。数组通过...运算符展开传入即可
+//     delete _obj.fn
+//     return result;
+// }
+        // fn._call(obj, 1, 2, 3, 4);
+
+
+
+
         
+
+
+// Function.prototype._apply = function () {
+// let obj = arguments[0]
+// obj.fn = this
+// obj.fn(...arguments[1]])
+// delete obj.fn
+// }
+
 
     </script>
 </body>
