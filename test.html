@@ -160,13 +160,13 @@
         //     console.log(this.English + this.qulity);
         // }
         // sum.call(alice, 1, 2);//机选alice的总分
-        var obj = {
-            name: 'obj'
-        }
-        function fn() {
-            console.log(this);
-            console.log(arguments);
-        }
+        // var obj = {
+        //     name: 'obj'
+        // }
+        // function fn() {
+        //     console.log(this);
+        //     console.log(arguments);
+        // }
         // Function.prototype._call = function () {
         //     var _obj = arguments[0] || window;//传入的第一个参数为对象，没传入或者null或者undefined默认为window            
         //     _obj.fn = this;//将当前函数赋值给对象的一个属性            
@@ -183,34 +183,171 @@
         // }
         // fn._call(obj, 1, 2, 3, 4);
 
-
-
-
-
         // 用es6比较方便
-
-// Function.prototype._call = function () {
-//     let params = Array.from(arguments);//得到所以实参数组
-//     let _obj = params.splice(0, 1)[0];//获取第一位作为对象，即this指向
-//     _obj.fn = this
-//     var result = _obj.fn(...params);//splice截取了第一位，所以原数组中没有第一位了，直接可以调用。数组通过...运算符展开传入即可
-//     delete _obj.fn
-//     return result;
-// }
+        // Function.prototype._call = function () {
+        //     let params = Array.from(arguments);//得到所以实参数组
+        //     let _obj = params.splice(0, 1)[0];//获取第一位作为对象，即this指向
+        //     _obj.fn = this
+        //     var result = _obj.fn(...params);//splice截取了第一位，所以原数组中没有第一位了，直接可以调用。数组通过...运算符展开传入即可
+        //     delete _obj.fn
+        //     return result;
+        // }
         // fn._call(obj, 1, 2, 3, 4);
 
 
+        // Function.prototype._apply = function (obj, args) {
+        //     var _obj = obj || window;
+        //     _obj.fn = this;
+        //     // 执行函数_obj.fn()前,将参数处理            
+        //     var result;
+        //     if (args) {
+        //         var _args = [];
+        //         for (var i = 0; i < args.length; i++) {
+        //             _args.push('args[' + i + ']');
+        //         }
+        //         var str = _args.join(",");
+        //         result = eval("_obj.fn(" + str + ")");
+        //     } else {
+        //         result = _obj.fn();
+        //     }
+        //     delete _obj.fn;
+        //     return result;
+        // }
+        // var obj = {
+        //     name: 'obj'
+        // }
+        // function fn() {
+        //     console.log(this);
+        //     console.log(arguments);
+        // }
+        // fn._apply();
 
 
-        
 
 
-// Function.prototype._apply = function () {
-// let obj = arguments[0]
-// obj.fn = this
-// obj.fn(...arguments[1]])
-// delete obj.fn
+
+
+
+
+
+
+
+        // Function.prototype._apply = function (_obj, args) {
+        //     _obj.fn = this;  
+        //     var result = args ? _obj.fn(...args) : _obj.fn();
+        //     delete _obj.fn;
+        //     return result;
+        // }
+        //         var obj = {
+        //             name: 'obj'
+        //         }
+        //         function fn() {
+        //             console.log(this);
+        //             console.log(arguments);
+        //         }
+        //         fn._apply(obj,[1,2,3,'a']);
+
+
+        // function Person(name, age, sex) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        // }
+        // function Student(name, age, sex, grade, tel, address) {
+        //     Person.call(this,name, age, sex);
+        //     this.grade = grade;
+        //     this.tel = tel;
+        //     this.address = address;
+        // }
+        // var alice = new Student("alice", 20, 'famale',88,"134****4559","海天二路33号")
+
+
+        // var n = 1;
+        // var obj = {
+        //     n:2
+        // }
+        // function fn(){
+        //     console.log(this.n);
+        // }
+        // fn();//1
+        // fn.call(obj);//2
+        // var temp = fn.bind(obj);//temp-->fn(){}
+        // temp();//2
+
+        // if (!Function.prototype._bind) {
+        //     Function.prototype._bind = function () {
+        //         if (typeof this !== "function") {
+        //             throw new TypeError("Function.prototype._bind - Can you try again! Gave me a function!!")
+        //         }
+        //         var _fn = this;//要bind的原始函数
+        //             _obj = [].shift.call(arguments),//bind谁身上
+        //             args = [].slice.call(arguments)//剩余arguments就是实参
+        //         return function (){//返回一个函数，先不执行
+        //             _fn.apply(_obj,args);
+        //         }
+        //     }
+        // }
+        //         var n = 1;
+        //         var obj = {
+        //             n: 2
+        //         }
+        //         function fn() {
+        //             console.log(this.n);
+        //             console.log(arguments)
+        //         }
+        //         var temp = fn._bind(obj, 1, 2, 3, 5);//temp-->fn(){}
+        //         temp();//2
+        // console.log(window);
+        // console.log(typeof window);
+        // console.log(Window);
+        // console.log(typeof Window);
+        // console.log(window.constructor === Window)
+
+        // console.log(Function.prototype)
+
+
+        // function fn1() {
+        //     console.log(this,arguments)
+        // }
+        // var o = {},
+        //     x = 1,
+        //     y = 2,
+        //     z = 3;
+        // var fn2 = fn1.bind(o,x,y);
+        // fn2("c");//o, [1, 2, "c"]
+
+
+
+// Function.prototype._bind = function (target) {
+//     //target:改变返回函数执行时的this指向
+//     var temp = function () { };//作为中间函数,用于实现继承
+//     //target不存在this默认window，当new调用时无需修改this指向
+//     var obj = this instanceof temp ? this : (target || window);
+//     var args = [].slice.call(arguments, 1);//获取bind时传入的绑定实参
+//     var self = this;//要bind的函数            
+//     var _fn = function () {
+//         var _args = [].slice.call(arguments, 0);//新函数执行时传递的实际参数
+//         return self.apply(obj, args.concat(_args));
+//     }
+//     //让中间函数的原型指向，要bind函数的原型
+//     temp.prototype = self.protoype;
+//     //让新函数的原型指向中间temp的对象，然后找到要bind函数的原型
+//     _fn.prototype = new temp();//这样新函数生成的对象的constructor就能找到旧的函数
+//     return _fn
 // }
+// var a = 1;
+// var o = {
+//     a:2
+// }
+// function A(){
+//     console.log(this.a);
+//     return arguments;
+// }
+// var fn1 =  A._bind(o,1,2,3);
+// var fn2 = A.bind(o,4,5,6);
+// console.log(fn1(111),fn2(222))
+
+
 
 
     </script>
