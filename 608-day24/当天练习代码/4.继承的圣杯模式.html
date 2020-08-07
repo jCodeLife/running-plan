@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承的圣杯模式</title>
+</head>
+
+<body>
+    <script>     
+    // 实现Son的构造函数构造出来的所以对象继承Father原型上的属性和方法
+    function inherit(Target, Origin) {
+        //Target构造函数构造出来的对象继承自Origin的原型
+        function F(){};
+        F.prototype = Origin.prototype;            
+        Target.prototype = new F();
+        Target.prototype.constructor = Target;//扭转对象的构造函数正确的指向
+        Target.prototype._super = Origin.prototype;//用于查看对象真实继承自谁
+    }
+
+    //test code
+    Father.prototype.lastName = "Wang";
+    function Father() {
+    }
+    function Son() {
+    }    
+    inherit(Son, Father);
+    var son = new Son();
+    var father = new Father();
+    console.log(son.lastName);//Wang
+    console.log(father.lastName);//Wang
+    Son.prototype.sex = "male";
+    console.log(son.sex);//male
+    console.log(father.sex);//undefined
+
+
+    </script>
+</body>
+
+</html>

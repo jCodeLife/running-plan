@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过借用构造函数实现继承</title>
+</head>
+
+<body>
+    <script>
+
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        function Student(name, age, sex, grade, tel, address) {
+            Person.call(this, name, age, sex);
+            this.grade = grade;
+            this.tel = tel;
+            this.address = address;
+        }
+        var alice = new Student("alice", 20, 'famale', 88, "134****4559", "海天二路33号")
+
+
+    </script>
+</body>
+
+</html>

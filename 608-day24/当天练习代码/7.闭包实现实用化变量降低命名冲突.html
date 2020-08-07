@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包实现实用化变量降低命名冲突</title>
+</head>
+
+<body>
+    <script>
+        var name = "a"
+        var init = (function () {
+            var name = "b";
+            function callName() {
+                console.log(name);
+            }
+            return function () {
+                callName();
+            }
+        }())
+        init();//b
+
+
+    </script>
+</body>
+
+</html>

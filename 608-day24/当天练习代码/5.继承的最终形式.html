@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承的最终形式</title>
+</head>
+
+<body>
+    <script>
+
+
+        //实现让Target构造函数构造出来的对象继承Origin的原型的属性和方法
+        var inherit = (function () {
+            function F() { };
+            return function (Target, Origin) {
+                F.prototype = Origin.prototype;
+                Target.prototype = new F();
+                Target.prototype.constructor = Target;
+                Target.prototype._super = Origin.prototype;
+            }
+        }());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿jQuery实现链式调用</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            eat: function () {
+                console.log('I eating');
+                return this;
+            },
+            drink: function () {
+                console.log('I drinking');
+                return this;
+            },
+            pull: function () {
+                console.log('I pulling');
+                return this;
+            },
+            pee: function () {
+                console.log('I peeing');
+                return this;
+            }
+        }
+        person.eat().drink().pull().pee();
+    </script>
+</body>
+
+</html>
