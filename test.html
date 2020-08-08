@@ -318,43 +318,64 @@
 
 
 
-// Function.prototype._bind = function (target) {
-//     //target:改变返回函数执行时的this指向
-//     var temp = function () { };//作为中间函数,用于实现继承
-//     //target不存在this默认window，当new调用时无需修改this指向
-//     var obj = this instanceof temp ? this : (target || window);
-//     var args = [].slice.call(arguments, 1);//获取bind时传入的绑定实参
-//     var self = this;//要bind的函数            
-//     var _fn = function () {
-//         var _args = [].slice.call(arguments, 0);//新函数执行时传递的实际参数
-//         return self.apply(obj, args.concat(_args));
-//     }
-//     //让中间函数的原型指向，要bind函数的原型
-//     temp.prototype = self.protoype;
-//     //让新函数的原型指向中间temp的对象，然后找到要bind函数的原型
-//     _fn.prototype = new temp();//这样新函数生成的对象的constructor就能找到旧的函数
-//     return _fn
-// }
-// var a = 1;
-// var o = {
-//     a:2
-// }
-// function A(){
-//     console.log(this.a);
-//     return arguments;
-// }
-// var fn1 =  A._bind(o,1,2,3);
-// var fn2 = A.bind(o,4,5,6);
-// console.log(fn1(111),fn2(222))
+        // Function.prototype._bind = function (target) {
+        //     //target:改变返回函数执行时的this指向
+        //     var temp = function () { };//作为中间函数,用于实现继承
+        //     //target不存在this默认window，当new调用时无需修改this指向
+        //     var obj = this instanceof temp ? this : (target || window);
+        //     var args = [].slice.call(arguments, 1);//获取bind时传入的绑定实参
+        //     var self = this;//要bind的函数            
+        //     var _fn = function () {
+        //         var _args = [].slice.call(arguments, 0);//新函数执行时传递的实际参数
+        //         return self.apply(obj, args.concat(_args));
+        //     }
+        //     //让中间函数的原型指向，要bind函数的原型
+        //     temp.prototype = self.protoype;
+        //     //让新函数的原型指向中间temp的对象，然后找到要bind函数的原型
+        //     _fn.prototype = new temp();//这样新函数生成的对象的constructor就能找到旧的函数
+        //     return _fn
+        // }
+        // var a = 1;
+        // var o = {
+        //     a:2
+        // }
+        // function A(){
+        //     console.log(this.a);
+        //     return arguments;
+        // }
+        // var fn1 =  A._bind(o,1,2,3);
+        // var fn2 = A.bind(o,4,5,6);
+        // console.log(fn1(111),fn2(222))
 
-// 如何确定函数调用形式：是自己调用fn(),还是其他对象调用，还是new fn();
-// ?
+        // 如何确定函数调用形式：是自己调用fn(),还是其他对象调用，还是new fn();
+        // ?
 
 
+function deepClone(origin, target) {
+    //origin:要被拷贝的对象
+    var target = target || {};
+    for (var prop in origin) {
+        if (origin.hasOwnPoperty(prop){
+            if (typeof (origin[prop]) === "object") {
+                if(Object.prototype.toString.call(origin[prop])=="[object Array]"){
+                    //数组
+                }else if(Object.prototype.toString.call(origin[prop])=="[object Object]"){
+                    //普通对象
+                }else{
+                    //null
+                }
 
-function Grand(){}
+            } else if (typeof (origin[prop]) === "function") {
 
-function Father(){}
+            } else if (typeof (origin[prop]) === "symbol") {
+
+            } else {
+                //除了object、function、symbol，剩下都是直接赋值的原始值
+                target[prop] = origin[prop];
+            }
+        }
+    }
+}
 
 
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function deepClone(origin, target) {
+            //origin:要被拷贝的对象
+            var target = target || {};
+            for (var prop in origin) {
+                if (origin.hasOwnPoperty(prop)) {
+                    if (typeof (origin[prop]) === "object") {//对象
+                        if (Object.prototype.toString.call(origin[prop]) == "[object Array]") {
+                            //数组
+                            target[prop] = [];
+                            deepClone(origin[prop], target[prop]);
+                        } else if (Object.prototype.toString.call(origin[prop]) == "[object Object]") {
+                            //普通对象
+                            target[prop] = {};
+                            deepClone(origin[prop], target[prop]);
+                        } else {
+                            //null
+                            target[prop] = null;
+                        }
+
+                    } else if (typeof (origin[prop]) === "function") {//函数
+                        var _fn = origin[prop];
+                        var _copyFn = function (fn) {
+                            var result = eval("0," + fn);
+                            for (var i in fn) {
+                                result[i] = fn[i];
+                            }
+                            return result
+                        }
+                        target[prop] = _copyFn(_fn);
+                    } else if (typeof (origin[prop]) === "symbol") {
+
+
+                    } else {
+                        //除了object、function、symbol，剩下都是直接赋值的原始值
+                        target[prop] = origin[prop];
+                    }
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
