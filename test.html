@@ -351,34 +351,94 @@
         // ?
 
 
-function deepClone(origin, target) {
-    //origin:要被拷贝的对象
-    var target = target || {};
-    for (var prop in origin) {
-        if (origin.hasOwnPoperty(prop){
-            if (typeof (origin[prop]) === "object") {
-                if(Object.prototype.toString.call(origin[prop])=="[object Array]"){
-                    //数组
-                }else if(Object.prototype.toString.call(origin[prop])=="[object Object]"){
-                    //普通对象
-                }else{
-                    //null
-                }
+// function deepClone(origin, target) {
+//     //origin:要被拷贝的对象
+//     var target = target || {};
+//     for (var prop in origin) {
+//         if (origin.hasOwnProperty(prop){
+//             if (typeof (origin[prop]) === "object") {
+//                 if(Object.prototype.toString.call(origin[prop])=="[object Array]"){
+//                     //数组
+//                 }else if(Object.prototype.toString.call(origin[prop])=="[object Object]"){
+//                     //普通对象
+//                 }else{
+//                     //null
+//                 }
 
-            } else if (typeof (origin[prop]) === "function") {
+//             } else if (typeof (origin[prop]) === "function") {
 
-            } else if (typeof (origin[prop]) === "symbol") {
+//             } else if (typeof (origin[prop]) === "symbol") {
 
-            } else {
-                //除了object、function、symbol，剩下都是直接赋值的原始值
-                target[prop] = origin[prop];
-            }
-        }
-    }
+//             } else {
+//                 //除了object、function、symbol，剩下都是直接赋值的原始值
+//                 target[prop] = origin[prop];
+//             }
+//         }
+//     }
+// }
+
+
+// var obj = {
+//     sym1 : Symbol("sym1"),
+//     sym2 : Symbol("sym1"),
+// }
+// for (var prop in obj) {
+//     if (obj.hasOwnProperty(prop)){
+//         console.log(prop);
+//         console.log(obj[prop]);
+//         console.log(typeof(obj[prop]))
+//     }
+// }
+
+
+// var obj = {
+//     c: Symbol("cc"),
+//     c: "cccccccc",
+//     fn:function(){}
+// };
+// var a = Symbol("aa");
+// var b = Symbol.for("bb");
+// obj[a] = "localSymbol";
+// obj[b] = "globalSymbol";
+
+// var objectSymbols = Object.getOwnPropertySymbols(obj);
+// console.log(objectSymbols.length); // 2
+// console.log(objectSymbols)         // [Symbol(aa), Symbol(bb)]
+// console.log(typeof(objectSymbols[0]))      // symbol
+
+
+// for(var temp in obj){
+//     console.log(temp,typeof(obj[temp]))
+// }
+
+//Symbol传入不同类型的值
+var _string = 'aa';
+var _number = 1;
+var _boolean = true;
+var _undefined = undefined;
+var _null= null;
+var _array = [1,2];
+var _fn = function(){a:1};
+var _obj = {name:"alice"};
+var _symbol = Symbol("s");
+console.log(Symbol(_string).toString()); //Symbol(aa)
+console.log(Symbol(_number).toString()); //Symbol(1)
+console.log(Symbol(_boolean).toString()); //Symbol(true)
+console.log(Symbol(_undefined).toString()); //Symbol()
+console.log(Symbol(_null).toString()); //Symbol(null)
+console.log(Symbol(_fn).toString()); //Symbol(function(){a:1})
+console.log(Symbol(_obj).toString()); //Symbol([object Object])
+// console.log(Symbol(_symbol).toString()); //test.html:431 Uncaught TypeError: Cannot convert a Symbol value to a string
+
+var _symbol1 = Symbol("s");
+function copySymbol (val){
+    var str = val.toString();
+    var tempArr = str.split("(");
+    var arr = tempArr[1].split(")")[0];
+    return Symbol(arr); 
 }
-
-
-
+var result = copySymbol(_symbol1)
+console.log(result)
 
     </script>
 </body>

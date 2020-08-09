@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+var arr1 = [1, 2, 3];
+var arr2 = new Array(1, 2, 3);
+
+console.log(arr1);//[1,2,3]
+console.log(arr2);//[1,2,3]
+console.log(arr1 == arr2);//fa;se
+console.log(arr1.constructor);//Array() { [native code] }
+console.log(arr2.constructor);//Array() { [native code] }       
+console.log(arr1.constructor === arr2.constructor);//true        
+
+    </script>
+</body>
+
+</html>

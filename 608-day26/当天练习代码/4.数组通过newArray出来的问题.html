@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = new Array();
+        console.log(arr);//[]
+
+        var arr = new Array(5);
+        console.log(arr);  //[empty × 5]
+
+        var arr = new Array(-5);
+        console.log(arr);//RangeError
+
+        var arr = new Array("aa");
+        console.log(arr);//["aa"]
+
+        var arr = new Array(true);
+        console.log(arr);//[true]
+
+        var arr = new Array({});
+        console.log(arr);//[{}]
+
+        var arr = new Array(1, 2, 3, 4);
+        console.log(arr);//[1,2,3,4]
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function deepClone(origin, target) {
+            //origin:要被拷贝的对象
+            var target = target || {};
+            for (var prop in origin) {
+                if (origin.hasOwnProperty(prop)) {
+                    if (typeof (origin[prop]) === "object") {//对象
+                        if (Object.prototype.toString.call(origin[prop]) == "[object Array]") {
+                            //数组
+                            target[prop] = [];
+                            deepClone(origin[prop], target[prop]);
+                        } else if (Object.prototype.toString.call(origin[prop]) == "[object Object]") {
+                            //普通对象
+                            target[prop] = {};
+                            deepClone(origin[prop], target[prop]);
+                        } else {
+                            //null
+                            target[prop] = null;
+                        }
+
+                    } else if (typeof (origin[prop]) === "function") {//函数
+                        var _copyFn = function (fn) {
+                            var result = new Function("return " + fn)();
+                            for (var i in fn) {
+                                result[i] = fn[i]
+                            }
+                            return result
+                        }
+                        target[prop] = _copyFn(origin[prop]);
+                    } else if (typeof (origin[prop]) === "symbol") {//里面的symbol                           
+                        target[prop] = _copySymbol(origin[prop]);
+                    } else {
+                        //除了object、function、symbol，剩下都是直接赋值的原始值number,string,boolean,undefined                        
+                        target[prop] = origin[prop];
+                    }
+                }
+            }
+            function _copySymbol(val) {
+                var str = val.toString();
+                var tempArr = str.split("(");
+                var arr = tempArr[1].split(")")[0];
+                return Symbol(arr);
+            }
+            //通过getOwnPropertySymbols找出来的symbol
+            var _symArr = Object.getOwnPropertySymbols(origin);
+            //或者通过Reflect.ownKeys(origin)返回一个由目标对象自身的属性键组成的数组
+            // var _keyArr = Reflect.ownKeys(origin);
+            //console.log(_symArr)//[Symbol(a), Symbol(b)]
+            //console.log(_keyArr)// ["name", "age", "isOldPerson", "sex", "money", "grader", "study", "key", "book", Symbol(a), Symbol(b)]
+            if (_symArr.length) {//查找成功
+                _symArr.forEach(symKey => {
+                    target[symKey] = origin[symKey];
+                });
+            }
+            return target;
+        }
+
+        var student = {
+            name: "alice",
+            age: 12,
+            isOldPerson: false,
+            sex: undefined,
+            money: null,
+            grader: [{
+                English: 120,
+                math: 80
+            }, 100],
+            study: function () {
+                console.log("I am a student,I hava to study every day!")
+            },
+            key: Symbol("s1-key"),
+            book: {
+                English: true
+            }
+        }
+        var a = Symbol('a')
+        var b = Symbol.for("b")
+        student[a] = "1111111111111"
+        student[b] = "222222222222222"
+        var res = deepClone(student);
+    </script>
+</body>
+
+</html>
