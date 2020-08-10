@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [1, 2, 3]
+        // console.log(arr.unshift('a', 'b', 'c'));//6
+        // console.log(arr);//['a','b','c',1,2,3]
+        // console.log(arr.length);//6
+
+        Array.prototype._unshift = function () {
+            //将数组本来元素移到后面去
+            for (var i = this.length - 1; i >= 0; i--) {
+                this[i + arguments.length] = this[i];
+            }
+            //将要添加的元素，一个一个添加进腾出来的空位上
+            for (var j = 0; j < arguments.length; j++) {
+                this[j] = arguments[j];
+            }
+            return this.length;
+        }
+
+        var arr = [1, 2, 3]
+        console.log(arr._unshift('a', 'b', 'c'));//6
+        console.log(arr);//['a','b','c',1,2,3]
+        console.log(arr.length);//6
+
+
+
+    </script>
+</body>
+
+</html>

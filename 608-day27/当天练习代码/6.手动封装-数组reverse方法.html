@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        Array.prototype._reverse = function () {
+            var left = 0;//存储左边第一个位置
+            var right = this.length - 1;//存储右边最后一个位置
+            while (left < right) {//停止进行的条件
+                var temp = this[left];//利用一个中间变量来交换位置
+                this[left] = this[right];
+                this[right] = temp;
+                left++;
+                right--;
+
+            }
+        }
+        var arr = [1, 2, 3, 4, 5, 6, 7]
+        console.log(arr._reverse());//undefined
+        console.log(arr);// [7, 6, 5, 4, 3, 2, 1]
+
+
+    </script>
+</body>
+
+</html>

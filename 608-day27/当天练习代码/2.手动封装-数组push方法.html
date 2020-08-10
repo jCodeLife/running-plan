@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+// var arr = [1,2,3];
+// console.log(arr.push(4,5));//5
+// console.log(arr)//[1,2,3,4,5]
+
+
+Array.prototype._push = function(){
+    for(var i=0;i<arguments.length;i++){
+        this[this.length] = arguments[i];
+    }
+    return this.length;
+}
+
+var arr = [1,2,3];
+console.log(arr._push(4,5));//5
+console.log(arr)//[1,2,3,4,5]
+
+    </script>
+</body>
+
+</html>

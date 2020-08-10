@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [1,2,3,4]
+        // console.log(arr.pop());//4
+        // console.log(arr);//[1,2,3]
+        // console.log(arr.length);//3
+
+
+        Array.prototype._pop = function () {
+            if (this.length) {
+                var result = this[this.length - 1]
+                delete this[this.length];
+                this.length--;
+                return result;
+            }
+            return;
+        }
+        //test code
+        //对空数组使用pop方法，不会报错，而是返回undefined。
+        console.log([].pop());
+        console.log([]._pop());
+
+
+        // var arr = [1, 2, 3, 4]
+        // console.log(arr._pop());//4
+        // console.log(arr);//[1,2,3]
+        // console.log(arr.length);//3
+
+
+
+
+    </script>
+</body>
+
+</html>

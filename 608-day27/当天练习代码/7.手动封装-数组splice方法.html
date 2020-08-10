@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,1,'a','b'));//[4]
+// console.log(arr);// [1, 2, 3, "a", "b", 5, 6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3))//[4,5,6]
+// console.log(arr);// [1, 2, 3]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice())//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+
+
+
+//一个参数值
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3))//[4,5,6]
+// console.log(arr);// [1,2,3]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice("3"))//[4,5,6]
+// console.log(arr);// [1,2,3]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice("3aaa"))//[1,2,3,4,5,6]
+// console.log(arr);// []
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice("aaa"))//[1,2,3,4,5,6]
+// console.log(arr);// []
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(null))//[1,2,3,4,5,6]
+// console.log(arr);// []
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(undefined))//[1,2,3,4,5,6]
+// console.log(arr);// []
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(false))//[1,2,3,4,5,6]
+// console.log(arr);// []
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(true))//[2,3,4,5,6]
+// console.log(arr);// [1]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(0))//[1,2,3,4,5,6]
+// console.log(arr);// []
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice([]))//[1,2,3,4,5,6]
+// console.log(arr);// []
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice([1]))//[2,3,4,5,6]
+// console.log(arr);// [1]
+
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice([3]))//[4,5,6]
+// console.log(arr);// [1,2,3]
+
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice({}))//[1,2,3,4,5,6]
+// console.log(arr);// []
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(-3))//[4,5,6]
+// console.log(arr);// [1,2,3]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(100))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+
+
+
+
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,1))//[4]
+// console.log(arr);// [1,2,3,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,'1'))//[4]
+// console.log(arr);// [1,2,3,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,'1aa'))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,'aaa'))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,-1))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,100))//[4,5,6]
+// console.log(arr);// [1,2,3]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,false))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,true))//[4]
+// console.log(arr);// [1,2,3,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,[]))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,[1]))//[4]
+// console.log(arr);// [1,2,3,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,{}))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,null))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+// var arr = [1,2,3,4,5,6]
+// console.log(arr.splice(3,undefined))//[]
+// console.log(arr);// [1,2,3,4,5,6]
+
+
+
+function ArraySplice(start, delete_count) {
+  CHECK_OBJECT_COERCIBLE(this, "Array.prototype.splice");
+
+  var num_arguments = arguments.length;
+  var array = TO_OBJECT(this);
+  var len = TO_LENGTH(array.length);
+  var start_i = ComputeSpliceStartIndex(TO_INTEGER(start), len);
+  var del_count = ComputeSpliceDeleteCount(delete_count, num_arguments, len,
+                                           start_i);
+  var deleted_elements = ArraySpeciesCreate(array, del_count);
+  deleted_elements.length = del_count;
+  var num_elements_to_add = num_arguments > 2 ? num_arguments - 2 : 0;
+
+  if (del_count != num_elements_to_add && %object_is_sealed(array)) {
+    throw %make_type_error(kArrayFunctionsOnSealed);
+  } else if (del_count > 0 && %object_is_frozen(array)) {
+    throw %make_type_error(kArrayFunctionsOnFrozen);
+  }
+
+  var changed_elements = del_count;
+  if (num_elements_to_add != del_count) {
+    // If the slice needs to do a actually move elements after the insertion
+    // point, then include those in the estimate of changed elements.
+    changed_elements += len - start_i - del_count;
+  }
+  if (UseSparseVariant(array, len, IS_ARRAY(array), changed_elements)) {
+    %NormalizeElements(array);
+    if (IS_ARRAY(deleted_elements)) %NormalizeElements(deleted_elements);
+    SparseSlice(array, start_i, del_count, len, deleted_elements);
+    SparseMove(array, start_i, del_count, len, num_elements_to_add);
+  } else {
+    SimpleSlice(array, start_i, del_count, len, deleted_elements);
+    SimpleMove(array, start_i, del_count, len, num_elements_to_add);
+  }
+
+  // Insert the arguments into the resulting array in
+  // place of the deleted elements.
+  var i = start_i;
+  var arguments_index = 2;
+  var arguments_length = arguments.length;
+  while (arguments_index < arguments_length) {
+    array[i++] = arguments[arguments_index++];
+  }
+  array.length = len - del_count + num_elements_to_add;
+
+  // Return the deleted elements.
+  return deleted_elements;
+}
+
+
+
+
+    </script>
+</body>
+
+</html>

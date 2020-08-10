@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [1, 2, 3]
+        // console.log(arr.shift());//1
+        // console.log(arr);//[2,3]
+        // console.log(arr.length);//2
+
+        Array.prototype._shift = function () {
+            var res = this[0];
+            //让前一位等于后一位，将第一位覆盖掉。
+            for (var index in this) {
+                this[index - 1] = this[index]
+            }
+            return res;
+        }
+        //test code
+        var arr = [1, 2, 3]
+        console.log(arr.shift());//1
+        console.log(arr);//[2,3]
+        console.log(arr.length);//2
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+// var arr = [1,2,3];
+// console.log(arr.push(4,5));//5
+// console.log(arr)//[1,2,3,4,5]
+
+
+Array.prototype._push = function(){
+    for(var i=0;i<arguments.length;i++){
+        this[this.length] = arguments[i];
+    }
+    return this.length;
+}
+
+// var arr = [1,2,3];
+// console.log(arr._push(4,5));//5
+// console.log(arr)//[1,2,3,4,5]
+
+
+
+// var a = [1,2];
+// var b = [3,4];
+// var res = Array.prototype.push.apply(a,b);
+// cvar res = onsole.log(a)//[1,2,3,4]
+// console.log(b)//[3,4]
+// console.log(res)//4;就是a.length
+
+
+// var a = ['a','b'];
+// var b = ['c','d'];
+// var res = a.push.apply(a, b)
+// console.log(a)//["a", "b", "c", "d"]
+// console.log(b)//["c", "d"]
+// console.log(res)//4;就是a.length
+
+var obj = {name:'alice'}
+var length = [].push.call(obj,1,2,3,4);
+console.log(obj)
+    </script>
+</body>
+
+</html>
