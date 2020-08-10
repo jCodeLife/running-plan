@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // var arr1 = [1,2,3];
+    // var arr2 = ['a','b','c'];
+    // var arr = arr1.concat(arr2);
+
+    // console.log(arr);//  [1, 2, 3, "a", "b", "c"]
+    // console.log(arr1);// [1, 2, 3]
+    // console.log(arr2);// ["a", "b", "c"]
+
+    // console.log(arr1.concat(111,222,333));// [1, 2, 3, 111, 222, 333]
+    // console.log(arr2.concat(arr1,[3,3,[4,4]]))// ["a", "b", "c", 1, 2, 3, 3, 3, [4,4]]
+
+
+    // 应用
+    var obj1 = { a: 1 }
+    var obj2 = { b: 2 }
+    var res = [].concat.call(obj1, obj2);
+    console.log(res);
+    console.log(obj1)
+  </script>
+</body>
+
+</html>
