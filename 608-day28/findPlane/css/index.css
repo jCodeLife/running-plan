@@ -1,0 +1,105 @@
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background-color: #eee;
+}
+.wrap{
+    /* background-color: #fff; */
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+.wrap .step{
+    width: 100px;
+    height: 2em;
+    margin: 20px auto;
+    background-color: rgb(253, 191, 202);
+    text-align: center;
+    line-height: 2em;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.wrap .step span{
+    font-size: 12px;
+    font-weight: bold;
+}
+.wrap .step span.count{
+    color: #f00;
+    font-size: 14px;
+}
+.wrap .content{
+    /* box-sizing: border-box; */
+    width: 300px;
+    height:300px ;
+    background-color:rgba(255, 192, 203, 0.9);
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.wrap .content div{
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+    /* background-color: ; */
+    float: left;
+    border-left: 1px solid #f60;
+    border-top: 1px solid #f60;
+}
+.wrap .content div:nth-child(10),
+.wrap .content div:nth-child(20),
+.wrap .content div:nth-child(30),
+.wrap .content div:nth-child(40),
+.wrap .content div:nth-child(50),
+.wrap .content div:nth-child(60),
+.wrap .content div:nth-child(70),
+.wrap .content div:nth-child(80),
+.wrap .content div:nth-child(90),
+.wrap .content div:nth-child(100){
+    border-right: 1px solid #f60;
+    
+}
+.wrap .content div:nth-child(91),
+.wrap .content div:nth-child(92),
+.wrap .content div:nth-child(93),
+.wrap .content div:nth-child(94),
+.wrap .content div:nth-child(95),
+.wrap .content div:nth-child(96),
+.wrap .content div:nth-child(97),
+.wrap .content div:nth-child(98),
+.wrap .content div:nth-child(99),
+.wrap .content div:nth-child(100){
+    border-bottom: 1px solid #f60;
+    
+}
+
+.wrap .btn{
+    display: block;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color:rgb(253, 191, 202) ;
+    cursor: pointer;
+    
+}
+.wrap .btn:checked{
+    border: none;
+}
+.plane.red{
+    background-color: #f00;
+}
+.blue{
+    background-color: #00f;
+}
+a{
+    display: block;
+}
