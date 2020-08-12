@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var arr = [1, 2, 3, 4, 5, 6];
+
+
+    // console.log(arr.indexOf(3));//2   只传一个值，默认从第0项开始查找  找到返回索引
+    // console.log(arr.indexOf(7));//-1 没找到返回-1
+    // console.log(arr.indexOf());//-1   什么都不传，返回-1
+    // console.log(arr.indexOf(3,'a'));//2   传两个值，第二个格式不正确，默认从第0项开始查找
+    // console.log(arr.indexOf(3,1));//2   从第2项开始查找，返回找到位置
+
+
+    // console.log(arr.lastIndexOf(3));//2    值传一个值，表示从倒数第一位开始查找，找到返回索引
+    // console.log(arr.lastIndexOf(7));//-1  没找到返回-1
+    // console.log(arr.lastIndexOf());//-1   什么都不传，返回-1
+    // console.log(arr.lastIndexOf(3,'a'));//-1   
+    // console.log(arr.lastIndexOf(1,'a'));//0   传两个值，第二个格式不正确，默认从倒数最后一位开始查找，即只是找一位
+    // console.log(arr.lastIndexOf(3,2));//2   第二位是正常数值，从该位置开始向前查找，没有找到返回-1  
+
+
+Array.prototype._indexOf = function (val, start) {
+  var self = this;
+  if (arguments.length == 0) {
+    return -1;
+  }
+  if (arguments.length == 1) {
+    return _searchFromZero();
+  }
+  if (arguments.length >= 2) {
+    // 这里得处理第二个参数：接受负值的情况 和 接受错误值的情况(判断是不是数字)
+    if (typeof start !== "number" || isNaN(start)) {
+      return _searchFromZero();
+    }
+    //否则就是数字，数字分正数和负数，负数可以通过运算转成正数
+    if (typeof start === "number" && !isNaN(start)) {
+      start = start >= 0 ? start : start + this.length;
+      var temp = 0;
+      for (var i = start; i < this.length; i++) {
+        temp++;
+        if (this[i] === val) {
+          return start + temp - 1;//变成下标
+        }
+      }
+      return -1;
+    }
+  }
+  function _searchFromZero() {
+    for (var i = 0; i < self.length; i++) {
+      if (self[i] === val) {
+        return i;
+      }
+    }
+    return -1;
+  }
+}
+
+// test code
+console.log(arr._indexOf(3));//2   只传一个值，默认从第0项开始查找  找到返回索引
+console.log(arr._indexOf(7));//-1 没找到返回-1
+console.log(arr._indexOf());//-1   什么都不传，返回-1
+console.log(arr._indexOf(3, 'a'));//2   传两个值，第二个格式不正确，默认从第0项开始查找
+console.log(arr._indexOf(3, 0));//2   
+console.log(arr._indexOf(3, -4));//2   
+console.log(arr._indexOf(3, -5));//2   
+console.log(arr._indexOf(3, 100));//-1  
+  </script>
+</body>
+
+</html>

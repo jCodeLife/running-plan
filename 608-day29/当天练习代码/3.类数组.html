@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function fn() {
+    //   // console.log(arguments)
+    //   arguments[0] = '通过下标修改已有数据';
+    //   arguments[3] =  "通过下标添加新的数据"  
+    //   // arguments.push("push");
+
+    // }
+    // fn('a', 'b', 'c')
+
+
+    // function fn() {
+    //   arguments.push = Array.prototype.push;
+    //   arguments.push('d');
+    //   console.log(arguments)
+
+    // }
+    // fn('a', 'b', 'c')
+
+    // var obj = {
+    //   1: "a",
+    //   2: 'b',
+    //   3: 'c',
+    //   length: 3,
+    //   push: Array.prototype.push,
+    //   splice: Array.prototype.splice
+    // }
+
+    // console.log(obj)
+
+
+    var obj = {
+      '2': 'a',
+      '3': 'b',
+      length: 2,
+      push: Array.prototype.push,
+    }
+    obj.push('c');
+    obj.push('d');
+    console.log(obj);
+  </script>
+</body>
+
+</html>
