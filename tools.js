@@ -30,3 +30,13 @@
 //     return count;
 // }
 //charCodeAt(n)：返回字符串第n位字符的unicode编码，大于255字节长度为2，小于为1
+
+
+//封装一个方法insertAfter,功能类似insertBefore
+// Element.prototype.insertAfter = function (targetNode, afterNode) {
+//     var beforeNode = afterNode.nextElementSibling;
+//     if (beforeNode) {
+//         this.appendChild(targetNode);
+//     }
+//     this.insertBefore(targetNode, beforeNode);
+// }
