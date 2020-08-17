@@ -8,12 +8,16 @@
 </head>
 
 <body>
-  <div class="wrap">
-
-  </div>
+  <div></div>
+  <span></span>
   <script>
-    
+    var odiv = document.getElementsByTagName("div")[0]
+    var ospan = document.getElementsByTagName("span")[0]
 
+
+    function getStyle(ele, prop) {
+      return window.getComputedStyle ? window.getComputedStyle(ele, null)[prop] : ele.currentStyle[prop];
+    }
   </script>
 </body>
 
