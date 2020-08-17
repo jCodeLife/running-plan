@@ -40,3 +40,8 @@
 //     }
 //     this.insertBefore(targetNode, beforeNode);
 // }
+
+// 封装一个方法获取dom元素的css样式的某属性的值，所以浏览器都好用
+// function getStyle(ele, prop) {
+//     return window.getComputedStyle ? window.getComputedStyle(ele, null)[prop] : ele.currentStyle[prop];
+// }
