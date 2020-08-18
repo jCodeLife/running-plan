@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" name="user" value="请输入用户名" style="color:#999"
+    onfocus="if(this.value=='请输入用户名'){this.value = '';this.style.color='#424242'}"
+    onblur="if(this.value == ''){this.value = '请输入用户名';this.style.color='#999'}">
+  <script>
+    // odiv.onclick = function (e) {
+    //   console.log(e);
+    // }
+
+
+    // odiv.addEventListener('click', function (e) {
+    //   console.log(1);
+    // }, false)
+    // odiv.addEventListener('click', function (e) {
+    //   console.log(2);
+    // }, false)
+
+
+
+    // odiv.attachEvent("onclick", function (e) {
+    //   console.log(e)
+    // })
+    // odiv.attachEvent("onclick", function (e) {
+    //   console.log(e.target)
+    // })
+
+
+    // function fn() {
+    //   console.log(arguments)
+    // }
+    // odiv.attachEvent("onclick", fn)
+    // odiv.attachEvent("onclick", fn)
+    // //打印两次
+
+
+    // function bindEvent(ele, type, handleFn) {
+    //   if (ele.addEventListener) {
+    //     ele.addEventListener(type, handleFn, false);
+    //   } else if{
+    //     ele.attachEvent('on' + type, function () {
+    //       handleFn.call(ele)
+    //     })
+    //   }else {
+    //     ele['on' + type] = handleFn;
+    //   }
+    // }
+
+
+    // e = e || window.event;
+    // var target = e.target || e.srcElement;
+
+
+    // function cancelDefault(e) {
+    //   e = e || window.event;
+    //   if (e.preventDefault) {
+    //     e.preventDefault();
+    //   } else {
+    //     e.returnValue = false;
+    //   }
+    // }
+
+  </script>
+</body>
+
+</html>
