@@ -41,7 +41,23 @@
 //     this.insertBefore(targetNode, beforeNode);
 // }
 
-// 封装一个方法获取dom元素的css样式的某属性的值，所以浏览器都好用
+
+// 封装一个方法获取dom元素的css样式的某属性的值，兼容所有浏览器
 // function getStyle(ele, prop) {
 //     return window.getComputedStyle ? window.getComputedStyle(ele, null)[prop] : ele.currentStyle[prop];
 // }
+
+
+
+//封装一个绑定事件的方法，兼容所有浏览器
+    // function bindEvent(ele, type, handleFn) {
+    //     if (ele.addEventListener) {
+    //         ele.addEventListener(type, handleFn, false);
+    //     } else if (ele.attachEvent) {
+    //         ele.attachEvent('on' + type, function () {
+    //             handleFn.call(ele);
+    //         });
+    //     } else {
+    //         ele['on' + type] = handleFn
+    //     }
+    // }
