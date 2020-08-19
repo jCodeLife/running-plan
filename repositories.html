@@ -32,6 +32,7 @@
     // }
     // func2();
     // 答案：4 1 3 5 6 2
+    // 解析：事件循环机制，主程序执行完，再执行微队列，再执行宏队列；Promise then会先进入微队列，setTimeout进入宏队列。
 
     // 3. 下面的代码的执行结果是什么
     // function Car(){
@@ -43,6 +44,7 @@
     // var car = new Car();
     // console.log(car.name);
     // 答案：maserati
+    // 解析：new构造函数产生对象时，有显示返回一个对象的情况，this就是该对象。
 
     // 4. 模拟实现placeholder作用
     // <input type="text" name="user" value="请输入用户名" style="color:#999"
@@ -50,10 +52,17 @@
     //  onblur="if(this.value == ''){this.value = '请输入用户名';this.style.color='#999'}" >
 
 
-    // 5.  下面代码的执行结果是什么
+    // 5. 下面代码的执行结果是什么
     // var a = 1;
     // var b = 2[a,b] = [b,a]
     // console.log(a,b)
     // 答案：a是1，b是[undefined , 1]   
-    // 提示：预编译和包装类对象的结果
+    // 解析：预编译和包装类对象的结果
+
+    // 6. 下面代码最后打印arr是什么
+    // var arr = [1,2,3,4,5];
+    // arr.length = 1;
+    // 答案：[1]
+    //解析：length会影响数组
+    
 </script>
