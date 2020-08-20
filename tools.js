@@ -50,14 +50,41 @@
 
 
 //封装一个绑定事件的方法，兼容所有浏览器
-    // function bindEvent(ele, type, handleFn) {
-    //     if (ele.addEventListener) {
-    //         ele.addEventListener(type, handleFn, false);
-    //     } else if (ele.attachEvent) {
-    //         ele.attachEvent('on' + type, function () {
-    //             handleFn.call(ele);
-    //         });
-    //     } else {
-    //         ele['on' + type] = handleFn
-    //     }
-    // }
+// function bindEvent(ele, type, handleFn) {
+//     if (ele.addEventListener) {
+//         ele.addEventListener(type, handleFn, false);
+//     } else if (ele.attachEvent) {
+//         ele.attachEvent('on' + type, function () {
+//             handleFn.call(ele);
+//         });
+//     } else {
+//         ele['on' + type] = handleFn
+//     }
+// }
+
+
+// 手动封装异步加载js的方法
+// function asyncLoadScript(url, callback) {
+//     var script = document.createElement('script');
+//     script.type = 'text/javascript';
+//     if (script.readyState) {//readyState是IE中的状态码
+//         script.onreadystatechange = function () {
+//             //绑定监听状态码的事件，IE状态码变成complete或者loaded，表示该元素加载完
+//             if (script.readyState == "complete" || script.readyState == "loaded") {
+//                 callback();//回调函数，当script加载完后调用
+//             }
+//         }
+//     } else {
+//         //非IE 用onload事件，表示当script加载完时
+//         script.onload = function () {
+//             callback();//回调函数，当script加载完后调用
+//         }
+//     }
+//     script.src = url;//放在这，是为了避免IE立即加载完，立即加载完就不再触发onreadystatechange
+//     document.head.appendChild(script);//加载到页面中去
+// }
+// //=============test code=========================
+// asyncLoadScript('./js/tools.js', function () {
+//     //code
+//     console.log('按照加载完了：' + url + '文件')
+// });
