@@ -96,3 +96,12 @@
 //         height: window.innerHeight || window.documentElement.clientHeight || window.body.clientHeight
 //     }
 // }
+
+
+ // 封装一个兼容所有浏览器的方法，用于查看滚动条滚动距离：
+    // window.getScrollLT = function () {
+    //   return {
+    //     left: window.pageXOffset || document.documentElement.scrollLeft + document.body.scrollLeft,
+    //     top: window.pageYOffset || document.documentElement.scrollTop + document.body.scrollTo
+    //   }
+    // }
