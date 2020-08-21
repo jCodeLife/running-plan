@@ -88,3 +88,11 @@
 //     //code
 //     console.log('按照加载完了：' + url + '文件')
 // });
+
+// 封装一个兼容性方法获取浏览器可视宽高：
+// window.getInnerWH = function () {
+//     return {
+//         width: window.innerWidth || window.documentElement.clientWidth || window.body.clientWidth,
+//         height: window.innerHeight || window.documentElement.clientHeight || window.body.clientHeight
+//     }
+// }
