@@ -9,7 +9,7 @@
     // getInfo(person, brithYear);
     // console.log(person, brithYear);
     // //答案：{name:Alice},2010
-    
+
 
     // 2.【Event Loop】下面代码的执行结果是什么
     // var p = new Promise(resolve => {
@@ -81,5 +81,16 @@
     // console.log(one,two,three);
     // 答案：{},"",[]
     // 解析：本题考查||运算符的用法。其实记住一条规律：||运算符返回的是能确认最终结果的值！
-    
+
+    // 9. 下面代码执行结果是？
+    // var h5course = false;
+    // var result = h5course / 0;
+    // if (result) {
+    //     console.log(result * 2 + '2' + 4)
+    // } else {
+    //     console.log(!result * 2 + '2' + '4')
+    // }
+    // 答案："224"
+    // 解析：0/0,null/0,undefined/0,false/0都为NaN，其他正数/0为infinity，其他负数除以0位-infinity。!NAN为true，true*2为2
+
 </script>
