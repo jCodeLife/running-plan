@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <style>      
+    p:empty{
+      width:100px;
+      height: 14px;
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <p></p>
+  <p><!-- 这里有comment节点 --></p>
+  <p>有内容的p</p>
+  <p class="have-attr-p"></p>
+</body>
+
+<!-- <head>
+  <style>      
+    p:first-of-type{
+      color: #f40;
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div>        
+    <span>span</span>
+    <p>pppp</p>
+  </div>
+</body> -->
+
+<!-- <head>
+  <style>      
+    span:nth-last-child(1){
+      color: #f40;
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div>        
+    <span>span</span>
+    <p>1</p>
+  </div>
+</body> -->
+
+
+
+<!-- <head>
+  <style>      
+    span:first-child{
+      color: #f40;
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+  <div>
+    <p>p</p>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+</body> -->
+
+
+
+
+
+
+
+
+<!-- <head>
+  <style>
+    :root,body{
+      background-color: #f00; 
+      height: 100%;     
+    }
+  </style>
+</head>
+<body>
+  <span class="a">span0</span>
+  <span class="b">span1</span>
+  <span class="c">span2</span>
+  <span class="d">span3</span>
+</body> -->
+
+
+
+
+
+
+<!-- <head>
+  <style>
+    span[class$='test'] {
+      color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <span class="a">span0</span>
+  <span class="a-test">span1</span>
+  <span class="b-test">span2</span>
+  <span class="ab-test">span3</span>
+</body> -->
+
+
+
+
+
+
+
+
+<!-- <head>
+  <style>
+    div ~ span {
+      color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <span>span</span>
+  <div>div</div>
+  <span>span0</span>
+  <p>p</p>
+  <span>span1</span>
+  <span>span2</span>
+  <span>span3</span>
+</body> -->
+
+<!-- <head>
+  <style>
+    div + span{
+      color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div>div</div>  
+  <span>span1</span>
+  <span>span2</span>
+  <span>span3</span>
+</body> -->
+
+</html>
