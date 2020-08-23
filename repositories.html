@@ -97,4 +97,47 @@
     // 答案："224"
     // 解析：0/0,null/0,undefined/0,false/0都为NaN，其他正数/0为infinity，其他负数除以0位-infinity。!NAN为true，true*2为2
 
+
+    // 10. 下面代码执行结果是什么？
+    // var a = 0, b=0;
+    // function A(a){
+    //     A = function(b){
+    //         alert(a + b++)
+    //     }
+    //     alert(a++)
+    // }
+    // A(1)
+    // A(2)
+    // 答案：1，4
+    // 解析：深入预编译和闭包就会得出结果
+    // 首先：A(1)执行前 全局GO{
+    //                         a：0,
+    //                         b：0,
+    //                         A：function A(a){}
+    //                     }
+    // 当A(1)执行的时候会产生一个放在自己作用域最顶端的的AO：{
+    //                                                     a:1
+    //                                                   }
+    //                                               GO变成：{
+    //                                                   a:0,
+    //                                                   b:0,
+    //                                                   A:function(b){alert(a + b++)}
+    //                                                     //注意这里相当于window.A = function(b){alert(a + b++)},
+    //                                                     //就跟函数保存到外部一样，产生了闭包。会拿着A(1)执行的AO{a:2}
+    //                                               }   
+    // 所以这里console.log(a++)，对应的是自己的AO里的a，后++，即打印出：1 ， 然后AO里面的a变成2，执行完销毁AO，
+    // 注意：当A(2)执行的时候是执行GO里的A:function(b){alert(a + b++)}
+    // 所以A(2)执行时，其[[scope]][0]是全新的AO{                        
+    //                                          b：2                                  
+    //                                      }
+    //                          [[scope]][1]：{
+    //                                          a：2
+    //                                       }  
+    //                          [[scope]][2]是GO{
+    //                                           a:0,
+    //                                           b:0,
+    //                                           A:function(b){alert(a + b++)}
+    //                                       }          
+    // 所以alert(a + b++)，即2 + 2 ,这里打印出4
+    // 所以最后结果分别打出1，4
 </script>
