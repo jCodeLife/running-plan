@@ -47,7 +47,7 @@
     // console.log(car.name);
     // 答案：maserati
     // 解析：new构造函数产生对象时，有显示返回一个对象的情况，this就是该对象。
-    
+
 
     // 4. 模拟实现placeholder作用
     // <input type="text" name="user" value="请输入用户名" style="color:#999"
@@ -154,4 +154,60 @@
     // 答案："123"
     // 解析：包装类的原因，js会将123.通过new Number(123.)打包成包装类对象。调用的是Number.prototype.toString
     // 所以new Number(123.).toString === Number.prototype.toString   
-</script>
+
+
+    // 13. 下面代码的执行结果是？
+    // var x = 1;
+    // var y = 2;
+    // function show() {
+    //     var x = 3;
+    //     return {
+    //         x: x,
+    //         fun: function (a, b) {
+    //             x = a + b;
+    //         }
+    //     }
+    // }
+    // var obj = show();
+    // obj.fun(x, y);
+    // console.log(obj.x)
+    // console.log(x)
+    // 答案：3，1
+    // 解析：考查知识点闭包和预编译
+    // 首先：
+    // GO:{
+    //     x:1,
+    //     y:2,
+    //     show:function(){},
+    //     obj:undefined
+    // }
+    // 接着执行到obj = show(),show执行产生一个自己的AO
+    // AO:{
+    //     x:3
+    // }
+    //同时返回一个对象，形成闭包，obj={
+    //                             x: 3,
+    //                             fun: function(a, b) {
+    //                                     x = a + b;
+    //                                 }
+    //                             }
+    // 接着执行obj.fun(x,y),即：obj.fun(1,2)
+    // 到这里一起来屡屡fun的[[scope]]
+    // [[scope]][0]---->{
+    //     a:1,
+    //     b:2
+    // }
+    // [[scope]][1]---->{
+    //     x:3
+    // }
+    // [[scope]][2]---->{
+    //     x:1,
+    //     y:2,
+    //     show:function(){},
+    //     obj:{x:3,fun:function(){}},
+    // }
+    // 所以执行obj.fun(1,2)时，里头就是x = 3，而GO上的x没有改变
+    // 这时候console.log(obj.x)，打印3；console.log(x)也为1
+
+    
+ </script>
