@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    :root,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    div {
+      float: left;
+      margin-left: 10px;
+      width: 300px;
+      height: 150px;
+      padding: 50px;
+      border: 10px solid rgba(244, 333, 0, .5);
+      background-color: deeppink;
+      background-image: url("./bg.jpg");
+      background-repeat: no-repeat;
+      background-origin: border-box;
+    }
+    div:nth-of-type(1){
+      background-clip: border-box;
+    }
+    div:nth-of-type(2){
+      background-clip: padding-box;
+    }
+    div:nth-of-type(3){
+      background-clip: content-box;
+      
+    }
+  </style>
+
+<body>
+  <div>
+    <p>这里是content区域</p>
+    <p>这里是content区域</p>
+  </div>
+  <div>
+    <p>这里是content区域</p>
+    <p>这里是content区域</p>
+  </div>
+  <div>
+    <p>这里是content区域</p>
+    <p>这里是content区域</p>
+  </div>
+</body>
+
+</html>

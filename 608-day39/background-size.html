@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<style>
+  :root,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+  div {
+    float: left;
+    margin-left: 10px;
+    width: 300px;
+    height: 150px;
+    padding: 50px;
+    border: 2px solid rgba(244, 333, 0, .5);
+    background-color: deeppink;
+    background-image: url("./bg.jpg");
+    background-repeat: no-repeat;
+  }
+  div:nth-of-type(1) {
+    background-size: auto;
+  }
+  div:nth-of-type(2) {
+    background-size: cover;
+  }
+  div:nth-of-type(3) {
+    background-size:contain;
+  }
+  div:nth-of-type(4) {
+    background-size:50%;
+  }
+  div:nth-of-type(5) {
+    background-size:100px;
+  }
+  div:nth-of-type(6) {
+    background-size:100px 100px;
+  }    
+</style>
+<body>
+  <div>
+    <p>background-size: auto</p>
+  </div>
+  <div>
+    <p>background-size: cover</p>
+  </div>
+  <div>
+    <p>background-size:contain</p>
+  </div>
+  <div>
+    <p>background-size: 50%</p>
+  </div>
+  <div>
+    <p>background-size: 100px</p>
+  </div>
+  <div>
+    <p>background-size:100px 100px</p>
+  </div>
+</body>
+
+</html>
