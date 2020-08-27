@@ -230,7 +230,7 @@
     // console.log(num.toFixed(2));
     // 答案：11、3.00
     // 解析：toString方法传入一个参数时，表示把一个数当成10进制转成对应的进制的数，这里3被当成10进制，变成2进制就是11；
-        // toFixed方法把目标数变成保留指定位数的小数，注意会四舍五入！这里保留两位小数，即变成3.00
+    // toFixed方法把目标数变成保留指定位数的小数，注意会四舍五入！这里保留两位小数，即变成3.00
 
     // 17. 下面代码的执行结果是什么？
     // function a(x){
@@ -239,4 +239,84 @@
     // var a;
     // console.log(a);
     // 答案：function a(x){return x*2}
+
+    // 18. 下面代码的运行结果是什么？
+    // debugger
+    // function fun(n, o) {
+    //     console.log(o);
+    //     return {
+    //         fun: function (m) {
+    //             return fun(m, n);
+    //         }
+    //     }
+    // }
+    // var a = fun(0);
+    // a.fun(1);
+    // a.fun(2);
+    // a.fun(3);
+    // var b = fun(0).fun(1).fun(2).fun(3);
+    // var c = fun(0).fun(2);
+    // c.fun(2);
+    // c.fun(3);
+    // 答案：
+    // undefined 0 0 0 
+    // undefined 0 1 2 
+    // undefined 0 2 2
+    // 解析：预编译结束后
+        // GO{
+        //     a: undefined,
+        //     b: undefined,
+        //     c: undefined,
+        //     fun: function(){}
+        // }      
+    //会首先会执行a = fun(0)，fun(0)执行产生一个fun执行的AO
+    //         AO{
+    //             n:0,
+    //             o:undefined
+    //         }       
+    // 这个时候 console.log(o); 打印出【undefined】        
+    // 接着a被赋值成一个对象,即GO变化了，如下
+        // GO{
+        //     a: {
+        //         fun:function(m){
+        //             return fun(m,n)
+        //         }
+        //     },
+        //     b: undefined,
+        //     c: undefined,
+        //     fun: function(){}
+        // }
+    // 接着a.fun(1)，即返回fun(m)执行的结果，这里fun(m)执行也会产生一个自己的AO
+    //         AO{
+    //             m:1
+    //         }
+    // fun(m)执行的结果就是fun(m,n)执行，这里m为1，n就是之前传进来的n，是0，即o变成0，即执行GO里的fun函数，console.log(o)即打印出：【0】
+    // 执行完销毁自己的AO
+    // 接着执行a.fun(2);又回到a.fun(1)一样的执行过程。在执行前a是拿着的[[scope]]是
+//         AO{
+//             n:0,
+//             o:0
+//         } 
+        // GO{
+        //     a: {
+        //         fun:function(m){
+        //             return fun(m,n)
+        //         }
+        //     },
+        //     b: undefined,
+        //     c: undefined,
+        //     fun: function(){}
+        // } 
+    // 当fun(2)执行，即返回fun(m)执行的结果，这里fun(m)执行也会产生一个自己的AO
+    //         AO{
+    //             m:2
+    //         }
+    // 结果还是没改变o，所以console.log(o)还是打印【0】
+    // a.fun(3);也一样，还是打印【0】
+
+    // 接着b=fun(0).fun(1).fun(2).fun(3)
+    // fun(0) 这时：n等于0，o等于undefined，所以先打印【undefined】，返回{fun:function(m){return fun(m,n)}}
+    // 接着执行里面的fun(1),即执行fun(1，0) 打印o为【0】，继续返回{fun:function(m){return fun(m,n)}}等待调用，这时的
+    // 接着执行后面返回fun函数，传入的m为2，即执行fun(2,1)，打印o为【1】，继续返回{fun:function(m){return fun(m,n)}}等待调用
+    // 接着执行后面返回fun函数，传入的m为3，即执行fun(3,2)，打印o为【2】，继续返回{fun:function(m){return fun(m,n)}}等待调用
 </script>
