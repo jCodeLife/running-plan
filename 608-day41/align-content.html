@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		body>div{
+			float: left;
+		}
+		.wrapper {
+			width: 280px;
+			height: 200px;
+			background-color: rgb(247, 176, 188);
+			margin: 10px;
+			overflow: hidden;
+			display: flex;
+			flex-flow: wrap;
+		}
+		.wrapper div{
+			box-sizing: border-box;
+			background-color: rgb(255, 40, 154);
+			width: 80px;
+			text-align: center;
+			line-height: 60px;
+		}
+		.wrapper div:nth-of-type(2n){
+			background-color: rgb(167, 82, 127);
+		}
+		.wrapper.one{
+			align-content: flex-start;
+		}
+		.wrapper.two{
+			align-content: flex-end;
+		}
+		.wrapper.three{
+			align-content: center;
+		}
+		.wrapper.four{
+			align-content: space-between;
+		}
+		.wrapper.five{
+			align-content: space-around;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper one">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+	<div class="wrapper two">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+	<div class="wrapper three">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+	<div class="wrapper four">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+	<div class="wrapper five">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+	</div>
+</body>
+
+</html>

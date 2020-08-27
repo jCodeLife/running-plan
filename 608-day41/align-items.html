@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		body>div{
+			float: left;
+		}
+		.wrapper {
+			width: 280px;
+			height: 200px;
+			background-color: rgb(247, 176, 188);
+			margin: 10px;
+			overflow: hidden;
+			display: flex;
+			flex-flow: wrap;
+		}
+		.wrapper div{
+			box-sizing: border-box;
+			background-color: rgb(255, 40, 154);
+			text-align: center;			
+			line-height: 60px;
+		}
+		.wrapper div:nth-of-type(2n){
+			background-color: rgb(167, 82, 127);
+		}
+		.wrapper.one{
+			align-items: flex-start;
+		}
+		.wrapper.two{
+			align-items: flex-end;
+		}
+		.wrapper.three{
+			align-items: center;
+		}
+		.wrapper.four{
+			align-items: baseline;
+		}
+		.wrapper.five{
+			align-items: stretch;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper one">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+	<div class="wrapper two">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+	<div class="wrapper three">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+	<div class="wrapper four">
+		<div>1</div>
+		<div>基线</div>
+		<div>3</div>
+	</div>
+	<div class="wrapper five">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+</body>
+
+</html>
