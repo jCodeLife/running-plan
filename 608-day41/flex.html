@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.wraper{
+			width: 400px;
+			height: 250px;
+			background-color: pink;
+			margin: 150px auto; 
+			overflow: hidden;
+			position: relative;
+		}
+		.wraper *{
+			box-sizing: border-box;
+			background-color: deeppink;
+			border:1px solid #0e0;
+			width: 80px;
+			height: 80px;
+			text-align: center;
+			line-height: 80px;
+			float: left;
+			position: absolute;			
+		}
+		/*设置位置*/
+		.wraper div:nth-of-type(1){
+			left: 80px;
+			top: 85px;
+
+		}
+		.wraper div:nth-of-type(2){
+			left: 160px;
+			top: 85px;
+
+		}		
+		.wraper div:nth-of-type(3){
+			left: 240px;
+			top: 85px;
+
+		}		
+
+	</style>
+</head>
+<body>
+	<div class="wraper">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+</body>
+</html>

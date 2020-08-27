@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style type="text/css">
+		.wraper {
+			width: 400px;
+			height: 250px;
+			background-color: pink;
+			margin: 150px auto;
+			overflow: hidden;
+		}
+
+		.wraper section * {
+			box-sizing: border-box;
+			background-color: deeppink;
+			border: 1px solid #0e0;
+			width: 80px;
+			height: 80px;
+			text-align: center;
+			line-height: 80px;
+			float: left;
+		}
+		.wraper section{
+			margin:0 auto;
+			width: 240px;
+			height: 80px;
+			margin-top:75px;
+		}
+		.clearFloat::after{
+			clear: both;
+			content: "";
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="wraper">
+		<section class="clearFloat">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</section>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+在传统的布局中，我们常常使用定位position以及浮动float等来实现页面的布局，虽然功能可以实现没有问题，但是它有缺点不够灵活，用起来比较费劲。比如我要实现多个同级元素在父级容器中水平垂直居中，如果通过position，那当它设置position:absolute时，所被设置的元素都会因为脱离文档流而重叠在一起，那得计算每个元素应该在的位置，这样一来，计算太麻烦，二来后面如果父级再增加或者删除一些子元素那又得重新计算，那想想就头大，而且这样的情况还不少。
+```
+<head>
+	<style type="text/css">
+		.wraper{
+			width: 400px;
+			height: 250px;
+			background-color: pink;
+			margin: 150px auto; 
+			overflow: hidden;
+			position: relative;
+		}
+		.wraper *{
+			box-sizing: border-box;
+			background-color: deeppink;
+			border:1px solid #0e0;
+			width: 80px;
+			height: 80px;
+			text-align: center;
+			line-height: 80px;
+			float: left;
+			position: absolute;			
+		}
+		/*设置位置*/
+		.wraper div:nth-of-type(1){
+			left: 80px;
+			top: 85px;
+		}
+		.wraper div:nth-of-type(2){
+			left: 160px;
+			top: 85px;
+		}		
+		.wraper div:nth-of-type(3){
+			left: 240px;
+			top: 85px;
+		}		
+	</style>
+</head>
+<body>
+	<div class="wraper">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+</body>
+```
+[图片上传失败...(image-56ade6-1598501864442)]
