@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body{
+			background-color: #eee;
+		}
+		section{		
+			margin-top: 100px;	
+			width: 650px;
+			height: 550px;			
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+		.wrapper {
+			width: 250px;
+			height: 100px;
+			background-color: #bbb;						
+			border: 1px solid deeppink;
+		}
+		.wrapper div{
+			width: 250px;
+			height: 100px;
+			text-align:center;
+			line-height: 100px;
+			font-size: .8em;
+			font-weight: bold;
+			background-color: pink;				
+		}
+.wrapper:nth-of-type(1) div{
+	transform-style: preserve-3d;
+	perspective:100px;
+	transform:  scale3d(1, 0.7, 0.2) translateZ(100px);
+}
+
+	</style>
+</head>
+<body>
+	<section>
+		<div class="wrapper">
+			<div>transform:scale3d(.8,.8,.8)</div>
+		</div>
+	</section>
+</body>
+
+
+</html>
