@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		div {
+			transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+			width: 100px;
+			height: 100px;
+			background-color: #f42
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<button>点我</button>
+</body>
+<script>
+	var odiv = document.getElementsByTagName('div')[0];
+	var btn = document.getElementsByTagName('button')[0];
+	btn.addEventListener('click', function () {
+		odiv.style.width = '200px';
+		console.log("clicked!!")
+	}, false);
+</script>
+
+</html>
