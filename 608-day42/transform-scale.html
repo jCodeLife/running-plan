@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body{
+			background-color: #eee;
+		}
+		section{		
+			margin-top: 100px;	
+			width: 650px;
+			height: 400px;			
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+		.wrapper {
+			width: 250px;
+			height: 100px;
+			background-color: #bbb;						
+			transition: all 2s;
+			border: 1px solid deeppink;
+		}
+		.wrapper div{
+			width: 250px;
+			height: 100px;
+			text-align:center;
+			line-height: 100px;
+			font-size: .8em;
+			font-weight: bold;
+			background-color: pink;				
+		}
+		/* .wrapper:nth-of-type(1) div{
+			transform:skew(10deg,10deg)
+		}
+		.wrapper:nth-of-type(2) div{
+			transform:skew(10deg)
+		}
+		.wrapper:nth-of-type(3) div{
+			transform:skew(-20deg,-20deg)
+		}
+		.wrapper:nth-of-type(4) div{
+			transform:skew(-20deg)
+		} */
+.wrapper:nth-of-type(1) div{
+	transform:skewX(10deg)
+}
+.wrapper:nth-of-type(2) div{
+	transform:skewX(10deg)
+}
+.wrapper:nth-of-type(3) div{
+	transform:skewY(20deg)
+}
+.wrapper:nth-of-type(4) div{
+	transform:skewY(20deg)
+}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="wrapper">
+			<div>transform:skewX(10deg)</div>
+		</div>
+		<div class="wrapper">
+			<div>transform:skewX(10deg)</div>
+		</div>
+		<div class="wrapper">
+			<div>transform:skewY(20deg)</div>
+		</div>
+		<div class="wrapper">
+			<div>transform:skewY(20deg)</div>
+		</div>
+	</section>
+</body>
+
+
+</html>

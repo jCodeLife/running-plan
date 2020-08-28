@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+		body{
+			background-color: #eee;
+		}
+		section{		
+			margin-top: 100px;	
+			width: 650px;
+			height: 550px;			
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+		}
+		.wrapper {
+			width: 250px;
+			height: 100px;
+			background-color: #bbb;						
+			transition: all 2s;
+			border: 1px solid deeppink;
+		}
+		.wrapper div{
+			width: 250px;
+			height: 100px;
+			text-align:center;
+			line-height: 100px;
+			font-size: .8em;
+			font-weight: bold;
+			background-color: pink;				
+		}
+		.wrapper:nth-of-type(1) div{
+			transform:rotate(30deg)
+		}
+		.wrapper:nth-of-type(2) div{
+			transform:rotate(90deg)
+		}
+		.wrapper:nth-of-type(3) div{
+			transform:rotate(-30deg)
+		}
+		.wrapper:nth-of-type(4) div{
+			transform:rotate(-90deg)
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="wrapper">
+			<div>transform:rotate(30deg)</div>
+		</div>
+		<div class="wrapper">
+			<div>transform:rotate(90deg)</div>
+		</div>
+		<div class="wrapper">
+			<div>transform:rotate(-30deg)</div>
+		</div>
+		<div class="wrapper">
+			<div>transform:rotate(-90deg)</div>
+		</div>
+	</section>
+</body>
+
+
+</html>
