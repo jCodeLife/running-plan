@@ -261,7 +261,7 @@
     // undefined 0 0 0 
     // undefined 0 1 2 
     // undefined 0 2 2
-    
+
     // 19. 下面代码的执行结果是？
     // var a = []+[]+"alice".split("");
     // console.log(a);
@@ -276,5 +276,21 @@
     // b = a - b;
     // a = a - b;
     // console.log(a,b)
-    
+
+    // 21. 下面代码的执行结果是？
+    // function Point(x, y) {
+    //     this.x = x;
+    //     this.y = y;
+    //     this.moveTo = function (x, y) {
+    //         this.x = x;
+    //         this.y = y;
+    //         console.log(this.x, this.y)
+    //     }
+    // }
+    // var p1 = new Point(0, 0);
+    // var p2 = { x: 0, y: 0 };
+    // p1.moveTo(1, 1);
+    // p1.moveTo.apply(p2, [10, 10])
+    // 答案：1,1 和 10,10
+    // 解析：this指向有两点，(1) 函数谁调用里面this指向谁，(2) apply call bind可改变函数执行时的this指向
 </script>
