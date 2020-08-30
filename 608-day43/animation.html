@@ -2,23 +2,58 @@
 <html>
 
 <head>
-<style>
-	div{
-		width: 100px;
-		height: 100px;
-		background-color: pink;
-		position: absolute;
-		animation: add-width 1s ease 1s 3;
-	}
-	@keyframes add-width {
-		from{
-			width: 100px;
+	<style>
+		@keyframes demo {
+			from {
+				top: 0px;
+				left: 0px;
+				background: red;
+			}
+
+			25% {
+				top: 0px;
+				left: 100px;
+				background: blue;
+			}
+
+			50% {
+				top: 100px;
+				left: 100px;
+				background: yellow;
+			}
+
+			75% {
+				top: 100px;
+				left: 0px;
+				background: green;
+			}
+
+			to {
+				top: 0px;
+				left: 0px;
+				background: red;
+			}
 		}
-		to{
-			width: 200px;
+
+		div {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: pink;
+			position: absolute;
+			/* animation-name: demo;
+	animation-duration: 4s;
+	animation-timing-function: ease;
+	animation-delay: .5s;
+	animation-iteration-count: infinite;
+	animation-direction: reverse;
+	animation-fill-mode: none; */
+			/* 也可以都写在animation复合属性上，格式如下： */
+			/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+			animation: demo 4s ease infinite reverse none;
+			animation-play-state: running;
 		}
-	}
-</style>
+	</style>
 </head>
 
 <body>
