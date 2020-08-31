@@ -305,5 +305,20 @@
 
     // }(123))
     // 答案：0，123，456，789，10
-    // 解析：立即执行函数与普通函数执行没有什么区别
+    // 解析：立即执行函数与普通函数执行没有区别
+
+    // 23. 下面代码执行结果是什么？
+    // console.log(1 + undefined);//NaN
+    // console.log(1 + null);//1
+    // console.log(null + undefined);//NaN 
+    // console.log(true + false);//1
+    // console.log(1 + '2');//12
+    // console.log(2 + []);//2
+    // console.log(2 + { a: 1 });//2[object Object]
+    // console.log([] + {});//[object Object]
+    // console.log({} + []);//[object Object]
+    // console.log(3 + {});//3[object Object]
+    // console.log({} + 3);//[object Object]3
+    // 答案：如上
+    // 解析：知识点加号运算符存在隐式类型转换，其中加对象时，相当于数值+"[object Object]",充当字符串连接符
 </script>
