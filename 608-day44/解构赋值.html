@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+// let [a,b,...c] = "alice";
+// console.log(a,b,c);
+// let {a} = "alice";
+// console.log(a);
+// let {length,indexOf:index,slice} = "alice"
+// console.log(length);//5
+// console.log(index);//indexOf() { [native code] }
+// console.log(slice);//slice() { [native code] }
+
+
+// let {valueOf:trueValue} = true;
+// let {valueOf:falseValue} = false;
+// console.log(trueValue());
+// console.log(falseValue());
+
+
+
+// let [a,...b] = 1234;
+// console.log(a,b);
+// let {toFixed:tf} = 1234;
+// console.log(tf(2));
+
+let [a,...b] = true;//Uncaught TypeError: true is not iterable
+let [x,...y] = false;//Uncaught TypeError: false is not iterable
+
+
+
+
+
+	</script>
+</body>
+
+</html>
