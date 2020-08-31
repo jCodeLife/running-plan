@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// String.prototype._includes = function (findStr) {
+		// 	return this.indexOf(findStr) == -1 ? false : true;
+		// }
+		// var test = "abcd"._includes("abc");
+		// console.log(test)
+
+		// String.prototype._startsWith=function(str){
+		// 	return this.slice(0,str.length) == str
+		// }
+		// console.log("abcd"._startsWith("ab"));
+
+		// String.prototype._endsWith = function(str){
+		// 	return this.slice(-str.length) == str
+		// }
+		// console.log("abcd"._endsWith("ab"));//false
+		// console.log("abcd"._endsWith("cd"));//true
+
+		// String.prototype._repeat = function (n) {
+		// 	let self =  this.valueOf();
+		// 	let res = "";
+		// 	let temp = Number(n) || 0;
+		// 	if (temp) {
+		// 		for (let i = 0; i < temp; i++) {
+		// 			res +=self;
+		// 		}
+		// 		return res;
+		// 	}
+		// }
+		// console.log("abc"._repeat(2));
+
+		// String.prototype._padStart = function (len, padString) {
+		// 	let str = this;
+		// 	padString = padString.toString();
+		// 	if (padString.length > len - this.length) {
+		// 		padString = padString.toString().slice(0, len - this.length);
+		// 		while (str.length < len) {
+		// 			str += padString;
+		// 		}
+		// 	}
+		// 	//padString.length小于len - this.length情况：
+		// 	// 如果padString没有内容，则每一位填充位置用空格填充；
+		// 	// 如果有内容，则重复填充(有点像图片repeat填充)
+		// 	else if(padString.length == 0){
+		// 		while (str.length < len) {
+		// 			str = " " + str;
+		// 		}
+		// 	}else{
+		// 		//padString中的字符可能需要重复出现
+		// 		// 前面需要填充len-this.length位，而我填充的字符串只有padString.length
+		// 		while (str.length < len) {
+		// 			str = padString + str;
+		// 		}
+		// 	}		
+		// 	return str;
+		// }
+		// console.log("abc"._padStart(6, "122111"));
+
+		String.prototype._padEnd = function (len, padString) {
+			let str = this;
+			padString = padString.toString();
+			if (padString.length > len - this.length) {
+				padString = padString.toString().slice(0, len - this.length);
+				while (str.length < len) {
+					str = str + padString;
+				}
+			}
+			else if (padString.length == 0) {
+				while (str.length < len) {
+					str += " ";
+				}
+			} else {
+				while (str.length < len) {
+					str += padString;
+				}
+			}
+			return str;
+		}
+		console.log("abc"._padEnd(6, "122111"));
+	</script>
+</body>
+
+</html>
