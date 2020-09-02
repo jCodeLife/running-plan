@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+
+
+		// Array.prototype._forEach = function (fn, thisTo) {
+		// 	for (let i = 0; i < this.length; i++) {
+		// 		fn.call(thisTo,this[i], i, this);
+		// 	}			
+		// }
+		// //test code
+		// let arr = [1,2,3,4];
+		// const obj = {name:"alice"}
+		// arr._forEach(function(val,index,array){
+		// 	console.log(this,val,index,array);//正常函数可以通过call来修改this指向
+		// },obj);
+		// arr._forEach((val,index,array)=>{
+		// 	console.log(this,val,index,array);//箭头函数不能通过第二个参数来修改其里头的this指向
+		// },obj);
+
+
+		// Array.prototype._map = function(fn,thisTo){
+		// 	let res = []
+		// 	for(let i = 0;i<this.length;i++){
+		// 		res[i] = fn.call(thisTo,this[i],i,this)
+		// 	}
+		// 	return res;
+		// }
+		// //test code
+		// let arr = [
+		//    {title:'aaaaa', read:100, hot:true},
+		//    {title:'bbbb', read:100, hot:true},
+		//    {title:'cccc', read:100, hot:true},
+		//    {title:'dddd', read:100, hot:true}
+		// ];
+		// let newArr = arr._map((item, index, arr)=>{
+		//    let json={}
+		//    json.t = `^_^${item.title}-----`;
+		//    json.r = item.read+200;
+		//    json.hot = item.hot == true && '真棒!!!';
+		//    return json;
+		// });
+		// console.log(newArr);
+
+
+
+
+		// Array.prototype._filter = function (fn, thisTo) {
+		// 	let newArr = [];
+		// 	let key = 0;
+		// 	for (let i = 0; i < this.length; i++) {
+		// 		if (fn.call(thisTo, this[i], i, this)) {
+		// 			newArr[key] = this[i];
+		// 			key++
+		// 		}
+		// 	}
+		// 	return newArr;
+		// }
+
+		// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+		// let res = arr._filter(function (val, index, array) {
+		// 	return val % 2 == 0;
+		// })
+		// console.log(res)
+
+
+
+		// Array.prototype._some=function(fn,thisTo){
+		// 	let res = false;
+		// 	for(let i = 0;i<this.length;i++){
+		// 		if(fn.call(thisTo,this[i],i,this)){
+		// 			res = true;
+		// 			break;
+		// 		}
+		// 	}
+		// 	return res;
+		// }
+
+		// let arr = [1,2,3,4,"b"];
+		// let res = arr._some(function(val,index,array){
+		// 	return val === "a";
+		// });
+		// console.log(res);//false
+
+		// Array.prototype._every = function (fn, thisTo) {
+		// 	let res = true;
+		// 	for (let i = 0; i < this.length; i++) {
+		// 		if (!fn.call(thisTo, this[i], i, this)) {
+		// 			res = false;
+		// 			break;
+		// 		}
+		// 	}
+		// 	return res;
+		// }
+		// let ints = [1, 1, 1, 1];
+		// let res = ints._every((val, index, array) => {
+		// 	return val == 1;
+		// });
+		// console.log(res)//true
+
+
+		// let arr = [1,2,3,4,5,6,7,8,9,10];
+		// let res = arr.reduce((total, cur, index, arr) =>{
+		//   return total+cur;
+		// });
+		//  console.log(res);
+
+
+
+
+		// Array.prototype._reduce = function (fn, thisTo) {
+		// 	let total = this[0];
+		// 	for (let i = 1; i < this.length; i++) {
+		// 		total = fn.call(thisTo, total, this[i], i, this)				
+		// 	}
+		// 	return total;
+		// }
+		// let arr = [1, 2, 3, 4, 5];
+		// let res = arr._reduce((total, cur, index, arr) => {
+		// 	console.log(total, cur, index, arr);//每一次的tatal就是上一次的循环执行的返回结果
+		// 	return total + cur;
+		// });
+		// console.log(res)
+
+		// Array.prototype._reduceRight = function (fn, thisTo) {
+		// 	let total = this[this.length-1];
+		// 	for (let i = this.length-1-1; i >= 0; i--) {
+		// 		total = fn.call(thisTo, total, this[i], i, this)				
+		// 	}
+		// 	return total;
+		// }
+		// let arr = [1, 2, 3, 4, 5];
+		// let res = arr._reduceRight((total, cur, index, arr) => {
+		// 	console.log(total, cur, index, arr);//每一次的tatal就是上一次的循环执行的返回结果
+		// 	return total + cur;
+		// });
+		// console.log(res)
+
+let arr = [1, 2, 3, 4, 5];
+for (let val of arr) {
+	console.log(val);
+}
+
+
+
+
+
+
+	</script>
+</body>
+
+</html>
