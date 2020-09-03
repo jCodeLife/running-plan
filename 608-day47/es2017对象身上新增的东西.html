@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+
+
+// Object._keys = function(o){
+// 	let res = [];
+// 	for(let val in o){
+// 		res.push(val)
+// 	}
+// 	return res;
+// }
+// let obj = {a:1,b:2,c:3};
+// console.log(Object._keys(obj));//["a", "b", "c"]
+
+// Object._values = function(o){
+// 	let res = [];
+// 	for(let key in o){
+// 		res.push(o[key]);
+// 	}
+// 	return res;
+// }
+// let obj = {a:1,b:2,c:3};
+// console.log(Object._values(obj));//[1, 2, 3]
+
+
+Object._entries = function(o){
+	let res = [];
+	for(let key in o){
+		res.push([key,o[key]]);
+	}
+	return res;
+}
+let obj = {a:1,b:2,c:3};
+console.log(Object._entries(obj));//[["a", 1], ["b", 2], ["c", 3]]
+	</script>
+</body>
+
+</html>
