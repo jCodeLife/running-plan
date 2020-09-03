@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		// let obj = {
+		// 	name: name,
+		// 	age: age,
+		// 	show: function () {
+		// 		//code...
+		// 	}
+		// }
+		// 可以简写成
+		// let obj = {
+		// 	name,
+		// 	age,
+		// 	show() {
+		// 		//code...
+		// 	}
+		// }
+
+
+		// const prop = 'aaa';
+		// const obj = {
+		// 	[prop + 'bbb']: 1,
+		// 	[prop + 'fn']() {
+		// 		console.log(arguments.callee.name);
+		// 	}
+		// }
+		// obj[prop + 'fn']();//aaafn
+		// obj.aaafn();//aaafn
+		// console.log(obj[prop+'bbb']);//1
+		// console.log(obj.aaabbb);//1
+
+		// console.log(NaN === NaN);//false
+		// console.log(+0 === -0);//true
+		// ========================================
+		// console.log(Object.is(NaN,NaN));//true
+		// console.log(Object.is(+0,-0));//false
+		// Object._is = function (one, two) {
+		// 	if (Number.isNaN(one) && Number.isNaN(two)) {
+		// 		return true;
+		// 	}
+		// 	//区分一个数是-0还是+0
+		// 	if (one === 0 && two === 0) {
+		// 		if (1 / one < 0 && 1/two >0){
+		// 			return false
+		// 		}
+		// 		if (1 / one > 0 && 1/two <0) {
+		// 			return false
+		// 		} 
+		// 	}
+		// 	return one === two;
+		// }
+		// console.log(Object._is(NaN,NaN));//true
+		// console.log(Object._is(+0, -0));//false
+		// console.log(Object._is(-0, +0));//false
+
+		// const a = { name: 'a', funA() { } }
+		// const b = { name: 'b', funB() { } }
+		// const c = { name: 'c', funC() { } }
+		// const d = { name: 'd', funD() { } }
+		// const obj = Object.assign(a,b,c,d);
+		// console.log(a,b,c,d)
+		// console.log(obj)
+		// console.log(a === obj)
+
+		// const a = { name: 'a', funA() { } }
+		// const b = Object.assign({},a);
+		// b.name = 'b';
+		// console.log(`a.name为：${a.name};  b.name为：${b.name}`)
+
+		// const obj1 = {arr:[1,1,1]}
+		// const obj2 = {arr:[2,2,2]}
+		// const obj3 = {arr:[3,3,3]}
+
+		// const obj = Object.assign(obj1,obj2,obj3);
+		// // console.log(obj)//{arr:[3,3,3]}
+		// obj.arr[0] = 1;
+		// console.log(obj)
+		// console.log(obj1)
+		// console.log(obj2)
+		// console.log(obj3)
+
+// Object._assign = function () {
+// 	if (arguments.length == 0) {
+// 		throw new TypeError(`Cannot convert undefined or null to object`);
+// 	}
+// 	if (arguments.length == 1) {
+// 		return arguments[0];
+// 	}
+// 	if (arguments.length >= 2) {
+// 		let target = arguments[0];
+// 		for (let i = 1; i < arguments.length; i++) {	
+// 			// 拿出每一个要被合并的对象，判断对象里面属性，在arguments[0]中是否已经存在，没有存在则加入，有存在就覆盖。				
+// 			for(let key in arguments[i]){
+// 				//key表示每个要合并的对象的属性，直接添加到target中去就可以，有就覆盖，没有就添加
+// 				target[key] = arguments[i][key];
+// 			}
+// 		}
+// 		return target
+// 	}
+// }
+// let obj1 = { name: 'a' };
+// let obj2 = { name: 'b' }
+// console.log(Object._assign(obj1, obj2));
+
+// const obj = Object.create(null);
+// console.log(obj)
+
+// let obj = {a:1,b:2,c:3};
+// let newObj = Object.create(null,Object.getOwnPropertyDescriptors(obj));
+// console.log(newObj)//{a: 1, b: 2, c: 3}
+// console.log(obj === newObj)//false
+
+	</script>
+</body>
+
+</html>
