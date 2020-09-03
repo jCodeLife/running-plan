@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+class Person {
+	constructor(name) {
+		this.name = name;
+	}
+	show() {
+		console.log(this.name);
+	}
+	static fn() {
+		console.log("私有方法fn")
+	}
+}
+let p = new Person('alice');
+typeof(Person)//function
+Person.fn();//私有方法fn
+console.log(p.name);//alice
+p.show();//alice
+p.fn();//Uncaught TypeError: p.fn is not a function
+	</script>
+</body>
+
+</html>
