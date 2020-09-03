@@ -330,5 +330,29 @@
     // 答案：456
     // 解析：在设置对象的属性时，如果属性传入是一个对象，js会隐式的讲变量变成对象对应的[object Object]
     // 所以：a[b]和a[c]其实都相当于a["[object Object]"],所以他们操作的都是a对象的同一个属性，因此结果为456
-    
+
+    // 25. 下面代码的执行结果是什么？
+    // for (var i = 0; i < 5; i++) {
+    //     setTimeout(function () {
+    //         console.log(i);
+    //     }, i * 1000);
+    // }
+    // 答案：5 5 5 5 5
+    // 解析:异步setTimeout是放在宏任务中，等执行完for循环之后再放到任务队列中执行
+    // 可以用let或者立即执行函数解决
+    // 方法一：
+    // for(let i = 0;i<5;i++){
+    //     setTimeout(function(){
+    //         cosnole.log(i);
+    //     },i*1000)
+    // }
+    // 方法二：
+    // for (var i = 0; i < 5; i++) {
+    //     (function(i){
+    //         setTimeout(() => {
+    //             console.log(i)//0 1 2 3 4
+    //         }, i*100);
+    //     }(i))
+    // }
+
 </script>
