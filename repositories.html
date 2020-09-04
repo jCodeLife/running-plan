@@ -369,4 +369,12 @@
     // 答案：Alice
     // 解析：原因很简答，在执行changeUser函数的时候，预编译将里头函数user提升了，后面改变user = "Tom"，改变的是changeUser函数里面的局部变量。
 
+    // 27. 下面代码执行的结果是什么？
+    // (function(){
+    //     var user = author = "Alice";
+    // }());
+    // console.log(author);
+    // console.log(user);
+    // 答案：Alice、Uncaught ReferenceError: user is not defined
+    // 解析：全局里面没有user，所以访问时会报错。而author是暗示全局变量，是有值的。
 </script>
