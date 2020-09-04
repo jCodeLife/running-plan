@@ -355,4 +355,18 @@
     //     }(i))
     // }
 
+    // 26. 下面代码执行结果是？
+    // var user = "Alice"
+    // function changeUser(){
+    //     user  = "Tom";
+    //     return;
+    //     function user(){
+    //         console.log('user function')
+    //     }
+    // }
+    // changeUser();
+    // console.log(user);
+    // 答案：Alice
+    // 解析：原因很简答，在执行changeUser函数的时候，预编译将里头函数user提升了，后面改变user = "Tom"，改变的是changeUser函数里面的局部变量。
+
 </script>
