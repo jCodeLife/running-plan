@@ -403,7 +403,7 @@
     //     try{
     //         throw new Error
     //     }catch(x){
-    //         console.log(x)
+    //         console.log(x)//Error
     //         var x = 1;
     //         var y = 2;
     //         console.log(x)//1
@@ -412,5 +412,8 @@
     //     console.log(y);//2
     // })();
     //答案: 1 undefined 2
-    // 解析：原因是catch里面的形参只能自catch代码块使用，相当于局部。而var定义的变量是忽略catch{}的约束的
+    // 解析：最开始执行匿名立即执行函数参数的作用域中，由于预编译将变量x和y提升了值为undefined
+    // 当执行catch函数时，里面有自己的形参变量x，这里的值是错误信息：Error,后面赋值为1；所以里面catch中先打印Error后打印1
+    // y被赋值为2;
+    // 所以外面打印的值：x为undefined，y为改变的值2
 </script>
