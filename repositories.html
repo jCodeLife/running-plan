@@ -416,4 +416,30 @@
     // 当执行catch函数时，里面有自己的形参变量x，这里的值是错误信息：Error,后面赋值为1；所以里面catch中先打印Error后打印1
     // y被赋值为2;
     // 所以外面打印的值：x为undefined，y为改变的值2
+
+
+    // 31. 下面代码的执行结果是？
+    // var a = 10;
+    // function fn() {
+    //     console.log(this.a)
+    // }
+    // var obj = {
+    //     a: 5,
+    //     method: function (fn) {
+    //         fn();//自己执行的，所有this指向window，打印出10
+    //         arguments[0]();
+    //     }
+    // }
+    // obj.method(fn, 1)
+    // 答案：10 undefined
+    // 解析：函数自己执行里面this指向window，函数传入另外一个函数作为参数，通过arguments[x]的形式调用，里面this指向arguments。
+    // 如下例子：
+    // function fn1(fn) {
+    //     fn();//指向window
+    //     arguments[0]();//里面this指向arguments
+    // }
+    // function fn2() {
+    //     console.log(this)
+    // }
+    // fn1(fn2,'aaa')
 </script>
