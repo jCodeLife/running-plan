@@ -432,14 +432,20 @@
     // }
     // obj.method(fn, 1)
     // 答案：10 undefined
-    // 解析：函数自己执行里面this指向window，函数传入另外一个函数作为参数，通过arguments[x]的形式调用，里面this指向arguments。
-    // 如下例子：
-    // function fn1(fn) {
-    //     fn();//指向window
-    //     arguments[0]();//里面this指向arguments
+    // 解析：函数自己执行里面this指向window，
+    // 函数传入另外一个函数作为参数，通过arguments[0]的形式调用，相当于arguments.0(),arguments.0就代表该函数，所以里面this指向arguments。
+    // 再比如：
+    // var length = 10;
+    // function fn() {
+    //     console.log(this.length)
     // }
-    // function fn2() {
-    //     console.log(this)
+    // var obj = {
+    //     length: 5,
+    //     method: function (fn) {
+    //         fn();//自己执行的，所有this指向window，打印出10
+    //         arguments[0]();//相当于arguments.0(),这里arguments的length为2，并且arguments.0中的0就是传入的fn，所以执行函数，相当于arguments调用。打印出2
+    //     }
     // }
-    // fn1(fn2,'aaa')
+    // obj.method(fn, 1)
+    // 答案是：10  2
 </script>
