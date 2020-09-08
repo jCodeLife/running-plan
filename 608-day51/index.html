@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="user" value="alice">
+    <button>获取用户用户相关信息</button>
+
+    <script src="./ajax.js"></script>
+    <script>
+        let btn = document.querySelector('button');
+        let user = document.querySelector("input").value
+        btn.onclick = function () {
+            ajax({//type,url,data,timeout,success,error将所有参数换成一个对象{}
+                type: "post",
+                url: "/",
+                data: "name=John&location=Boston",
+                success: function (msg) {
+                    alert("Data Saved: " + msg);
+                },
+                timeout:6000,
+                error: function (err) {
+                    alert(err);
+                },
+                //xxx
+            });
+        }
+        let p = new Promise(function (resolve, reject) {
+
+        });
+    </script>
+</body>
+
+</html>
