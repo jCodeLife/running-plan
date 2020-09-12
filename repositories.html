@@ -448,4 +448,17 @@
     // }
     // obj.method(fn, 1)
     // 答案是：10  2
+
+    // 32. 下面代码的执行结果
+    // var fn = function a(){
+    //     a = 1;
+    //     console.log(typeof a)
+    // }
+    // fn();//function
+    // console.log(typeof a)//undefined
+    // 答案：function  undefined
+    // 解析：关于有名函数表达式需要注意2点：
+    // （1）有名函数表达式的函数名（a）在函数体内还代表一个函数
+    // （2）在函数体外部是会自动忽略函数的名称，即函数体外面是不能访问到（a）
+    // （3）在函数体内部，函数名（a）不能再被修改
 </script>
