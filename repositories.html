@@ -464,4 +464,21 @@
 
     // 33. 说说this和$(this)在jQuery中有什么不同？
     // 答案：this是js关键字中的一个，表示当前DOM元素；而$(this)返回的一个jQuery对象，可以调用jQuery中封装的方法
+
+    // 34. 下面代码的执行结果是什么？
+    // function fn1() {
+    //     return {
+    //         str: 'hello'
+    //     }
+    // }
+    // function fn2() {
+    //     return
+    //     {
+    //         str: 'hello'
+    //     }
+    // }
+    // console.log(fn1());
+    // console.log(fn2());
+    // 答案：{str: "hello"}   undefined
+    // 解析：js语言特性，如果语句表达是完整的，换行后默认会在语句后面加入‘;’
 </script>
