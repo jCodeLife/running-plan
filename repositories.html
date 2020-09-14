@@ -493,4 +493,38 @@
     //     console.log(fn.length)//2
     // }
     // fn(1,2,3,4,5);
+
+    // 36. 下面代码执行结果是？
+    // function Foo() {
+    //     getName = function () {
+    //         alert(1)
+    //     }
+    //     return this;
+    // }
+    // Foo.getName = function () {
+    //     alert(2)
+    // }
+    // Foo.prototype.getName = function () {
+    //     alert(3)
+    // }
+    // var getName = function () {
+    //     alert(4)
+    // }
+    // function getName() {
+    //     alert(5)
+    // }
+    // // 分析此时GO里有的东西：{
+    // // getName: function getName() {alert(4)},
+    // // Foo: function Foo(){getName = function () {alert(1)}  return this; }
+    // // }
+    // // 并且Foo的静态方法中有个Foo.getName = function () {alert(2)}
+    // // 原型上还有个方法getName = function () {alert(3)}
+    // // 下面的结果是？
+    // Foo.getName();//2
+    // getName()//4
+    // Foo().getName()//Foo(),返回this为window，并且GO中的getName变成alert(1),所以这里是：1
+    // getName()//1
+    // new Foo.getName()//将Foo.getName函数作为构造函数执行，所以弹出：2
+    // new Foo().getName();//调用的是原型上的方法 所以打印： 3
+    // new new Foo().getName()//这里是js运算符的优先级问题，相当于new((new Foo()).getName)();答案输出：3
 </script>
