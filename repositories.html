@@ -481,4 +481,16 @@
     // console.log(fn2());
     // 答案：{str: "hello"}   undefined
     // 解析：js语言特性，如果语句表达是完整的，换行后默认会在语句后面加入‘;’
+
+    // 35. 如何获取函数实参和形参的个数？
+    // 答案：
+    // function fn(a,b){
+    //     //1. 获取实参个数的方式：
+    //     console.log(arguments.length);//5
+    //     //2. 获取形参个数的方式：
+    //     console.log(arguments.callee.length)//2
+    //     arguments.callee===fn,所以也可以用fn.length获取形参个数
+    //     console.log(fn.length)//2
+    // }
+    // fn(1,2,3,4,5);
 </script>
