@@ -1,4 +1,4 @@
-//【继承】:让Target构造函数构造出来的对象继承Origin的原型的属性和方法
+//1.【继承】:让Target构造函数构造出来的对象继承Origin的原型的属性和方法
 // var inherit = (function () {
 //     function F() { };
 //     return function (Target, Origin) {
@@ -10,7 +10,7 @@
 // }());
 
 
-// 【递归】计算n的阶层
+// 2.【递归】计算n的阶层
 // function mul(n){
 //     if(n==0||n==1){
 //         return 1;
@@ -19,7 +19,7 @@
 // }
 
 
-//查找任意字符串的字节长度
+//3. 查找任意字符串的字节长度
 // function bytesLengh(str) {
 //     var count = str.length;
 //     for (var i = 0; i < str.length; i++) {
@@ -32,7 +32,7 @@
 //charCodeAt(n)：返回字符串第n位字符的unicode编码，大于255字节长度为2，小于为1
 
 
-//封装一个方法insertAfter,功能类似insertBefore
+//4. 封装一个方法insertAfter,功能类似insertBefore
 // Element.prototype.insertAfter = function (targetNode, afterNode) {
 //     var beforeNode = afterNode.nextElementSibling;
 //     if (beforeNode) {
@@ -42,14 +42,14 @@
 // }
 
 
-// 封装一个方法获取dom元素的css样式的某属性的值，兼容所有浏览器
+// 5. 封装一个方法获取dom元素的css样式的某属性的值，兼容所有浏览器
 // function getStyle(ele, prop) {
 //     return window.getComputedStyle ? window.getComputedStyle(ele, null)[prop] : ele.currentStyle[prop];
 // }
 
 
 
-//封装一个绑定事件的方法，兼容所有浏览器
+//6. 封装一个绑定事件的方法，兼容所有浏览器
 // function bindEvent(ele, type, handleFn) {
 //     if (ele.addEventListener) {
 //         ele.addEventListener(type, handleFn, false);
@@ -63,7 +63,7 @@
 // }
 
 
-// 手动封装异步加载js的方法
+// 7. 手动封装异步加载js的方法
 // function asyncLoadScript(url, callback) {
 //     var script = document.createElement('script');
 //     script.type = 'text/javascript';
@@ -89,7 +89,7 @@
 //     console.log('按照加载完了：' + url + '文件')
 // });
 
-// 封装一个兼容性方法获取浏览器可视宽高：
+// 8. 封装一个兼容性方法获取浏览器可视宽高：
 // window.getInnerWH = function () {
 //     return {
 //         width: window.innerWidth || window.documentElement.clientWidth || window.body.clientWidth,
@@ -98,7 +98,7 @@
 // }
 
 
-// 封装一个兼容所有浏览器的方法，用于查看滚动条滚动距离：
+// 9. 封装一个兼容所有浏览器的方法，用于查看滚动条滚动距离：
 // window.getScrollLT = function () {
 //   return {
 //     left: window.pageXOffset || document.documentElement.scrollLeft + document.body.scrollLeft,
@@ -107,7 +107,7 @@
 // }
 
 
-//  模拟jQuery中的ajax，手动封装一个自己的ajax()
+//  10. 模拟jQuery中的ajax，手动封装一个自己的ajax()
 // function ajax(option) {//type,url,data,timeout,success,error将所有参数换成一个对象{}
 //    //  0.将对象转换成字符串
 //    var str = objToString(option.data);
@@ -162,7 +162,7 @@
 //    }
 // }
 
-// 模拟实现new
+// 11. 模拟实现new
 // Function.prototype._new = function (...arg) {
 //     let _this = {};//第一步，创建this对象
 //     _this.__proto__ = this.prototype;//第二步，添加属性指向构造函数原型
