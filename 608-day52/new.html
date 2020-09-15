@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // function Person(name, age) {
+        //     console.log(this)//Person {name: "alice", age: 12}
+        //     this.name = name;
+        //     this.age = age;
+        //     alert(1)//弹出1
+        //     console.log(2);//控制台输出2
+        //     function inner() {
+        //         if (1) {
+        //             console.log('inner')//inner函数执行打印出：inner
+        //         }
+        //     }
+        //     inner();
+        // }
+        // let p1 = new Person('alice', 12);
+        // console.log(p1)//Person {name: "alice", age: 12}
+
+        // Person.prototype.show = function (name, age) {
+        //     console.log(`我叫${this.name}，我今年${this.age}岁了！`)
+        // }
+        // p1.show()//我叫alice，我今年12岁了！
+
+
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     return 1;//number ,string ,boolean结果都是
+        // }
+        // let p1 = new Person('alice', 12);
+        // console.log(p1);
+
+
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     function fn(){
+        //     }
+        //     return fn;
+        // }
+        // let p1 = new Person('alice', 12);
+        // console.log(p1);//fn(){}
+
+
+
+        // Function.prototype._new = function (...arg) {
+        //     let _this = {};//第一步，创建this对象
+        //     _this.__proto__ = this.prototype;//第二步，添加属性指向构造函数原型
+        //     let _constructorRes = this.apply(_this, arg);//第三步，让构造函数执行，并绑定构造函数中的this指向新对象
+        //     //第四步，判断返回结果是什么类型
+        //     if (typeof _constructorRes === 'number'
+        //         || typeof _constructorRes === 'string'
+        //         || typeof _constructorRes === 'boolean'
+        //         || _constructorRes === null
+        //         || _constructorRes === undefined) {//判断为原始值，返回_this对象
+        //         return _this;
+        //     } else {
+        //         return _constructorRes;
+        //     }
+        // }
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // let p1 = Person._new('alice', 12);//结果与let p1 = new Person('alice', 12)一致
+        // console.log(p1);//{name: "alice", age: 12}
+
+function Foo() {
+    getName = function () {
+        alert(1)
+    }
+    return this;
+}
+Foo.getName = function () {
+    alert(2)
+}
+Foo.prototype.getName = function () {
+    alert(3)
+}
+var getName = function () {
+    alert(4)
+}
+function getName() {
+    alert(5)
+}
+Foo.getName();//2
+getName()//4
+Foo().getName()//Foo(),返回this为window，并且GO中的getName变成alert(1),所以这里是：1
+getName()//1
+new Foo.getName()//将Foo.getName函数作为构造函数执行，所以弹出：2
+new Foo().getName();//调用的是原型上的方法 所以打印： 3
+new new Foo().getName()//这里是js运算符的优先级问题，相当于new((new Foo()).getName)();答案输出：3
+
+    </script>
+</body>
+
+</html>

@@ -161,3 +161,26 @@
 //       }, timeout);
 //    }
 // }
+
+// 模拟实现new
+// Function.prototype._new = function (...arg) {
+//     let _this = {};//第一步，创建this对象
+//     _this.__proto__ = this.prototype;//第二步，添加属性指向构造函数原型
+//     let _constructorRes = this.apply(_this, arg);//第三步，让构造函数执行，并绑定构造函数中的this指向新对象
+//     //第四步，判断返回结果是什么类型
+//     if (typeof _constructorRes === 'number'
+//         || typeof _constructorRes === 'string'
+//         || typeof _constructorRes === 'boolean'
+//         || _constructorRes === null
+//         || _constructorRes === undefined) {//判断为原始值，返回_this对象
+//         return _this;
+//     } else {
+//         return _constructorRes;
+//     }
+// }
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+// let p1 = Person._new('alice', 12);//结果与let p1 = new Person('alice', 12)一致
+// console.log(p1);//{name: "alice", age: 12}
