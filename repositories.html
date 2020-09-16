@@ -527,4 +527,17 @@
     // new Foo.getName()//将Foo.getName函数作为构造函数执行，所以弹出：2
     // new Foo().getName();//调用的是原型上的方法 所以打印： 3
     // new new Foo().getName()//这里是js运算符的优先级问题，相当于new((new Foo()).getName)();答案输出：3
+
+    // 37. 下面代码的执行结果是？
+    // var user = 'alice';
+    // function firstFn(){
+    //     console.log(user);
+    // }
+    // function secondFn(){
+    //     var user = 'tom';
+    //     firstFn();
+    // }
+    // firstFn();
+    // 答案:'alice'
+    
 </script>
