@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// let obj = {}
+		// obj.name ='lbj'
+		// console.log(obj.name)//lbj
+		// Object.defineProperty(obj, 'name', {
+		// 	value: 'alice'
+		// });
+		// console.log(obj.name)//alice
+		// // obj.name ='tom'
+		// console.log(obj.name)//tom
+
+		// Object.defineProperty(obj, 'name', {
+		// 	value: 'aaa'
+		// });
+		// console.log(obj.name)//aaa
+			// debugger
+
+// let obj = {}
+// Object.defineProperty(obj, 'name', {
+// 	configurable: true,
+// 	enumerable: true,
+// 	get: function () {
+// 		console.log(this)
+// 		console.log(`你访问了obj.name属性哦`);
+// 		return 'tom';
+// 	}
+// })
+// console.log(obj.name)//你访问了obj.name属性哦   tom
+
+
+let obj = {}
+Object.defineProperty(obj, 'name', {
+	configurable: true,
+	enumerable: true,
+	set: function (val) {
+		console.log(`设置obj.name的值为：${val}`)//默认会将设置的值作为参数传递进去
+	}
+})
+obj.name = 'aaa'//设置obj.name的值为：aaa
+	</script>
+</body>
+
+</html>
