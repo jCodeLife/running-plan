@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+// let obj = {
+// 	name: 'alice',
+// 	showName() {
+// 		console.log(`my name is ${this.name}`)
+// 	}
+// }
+// //1.获取对象属性
+// console.log(obj.name)//alice
+// //2.给对象添加属性
+// obj.age = 12;
+
+// //3. 判断属性是否在对象中
+// console.log('age' in obj)//true
+// //4. 删除对象属性
+// delete obj.age
+// // 5. 通过各种方法遍历对象的所有属性
+// console.log(Object.getOwnPropertyNames(obj));//["name", "showName"]
+// console.log(Object.getOwnPropertySymbols(obj));//[]
+// console.log(Object.keys(obj))//["name", "showName"]
+// for (let key in obj){
+// 	console.log(key)
+// }//分别打印name showName
+// //6. 获取对象的某个属性的描述对象
+// let d = Object.getOwnPropertyDescriptor(obj,'name')
+// console.log(d)//{value: "alice", writable: true, enumerable: true, configurable: true}
+// // 7. 使用Object身上的方法，为某个对象添加一个或多个属性
+// Object.defineProperty(obj,'age',{			
+// 	value:12,
+// 	writable:true,
+// 	enumerable:true,
+// 	configurable:true
+// })
+// Object.defineProperties(obj,{
+// 	showAge:{
+// 		value:function(){console.log(`我今年${this.age}岁了`)},
+// 		writable:true,
+// 		enumerable:true,
+// 		configurable:true,
+// 	},
+// 	showInfo:{
+// 		value:function(){console.log(`我叫${this.name},我今年${this.age}岁了`)},
+// 		writable:true,
+// 		enumerable:true,
+// 		configurable:true,
+// 	}
+	
+// })
+
+// //8. 获取一个对象的原型对象
+// Object.getPrototypeOf(obj)		
+// console.log(Object.getPrototypeOf(obj) === obj.__proto__)//true
+// //9. 设置某个对象的原型属性对象
+// Object.setPrototypeOf(obj,null);//表示设置对象的原型为null，也可以传入其他对象作为其原型
+// //10. 让一个对象变得不可扩展，即不能添加新的属性
+// Object.preventExtensions(obj)
+// //11. 查看一个对象是不是可扩展的
+// console.log(Object.isExtensible(obj));//false，因为上面设置了该对象为不可扩展对象
+// // 12. 如果对象为function类型，function类型的对象可以执行被执行符号()执行
+// function fn(...args){
+// 	console.log(this,args) 
+// }
+// fn(1,2,3);
+// fn.call(obj,1,2,3);
+// fn.apply(obj,[1,2,3]);
+// // 13.如果对象时作为构造函数时，则该对象可以用new生成出新的对象
+// function Person(){}
+// let p1 = new Person();
+
+var person = {
+  name: "Alice"
+};
+var proxy = new Proxy(person, {
+  get: function(target, propKey) {
+    if (propKey in target) {
+      return target[propKey];
+    } else {
+      throw new ReferenceError(`Prop name ${propKey} does not exist.`);
+    }
+  }
+});
+proxy.name // "Alice"
+proxy.age // 抛出一个错误
+
+
+	</script>
+</body>
+
+</html>
