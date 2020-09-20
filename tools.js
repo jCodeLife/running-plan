@@ -184,3 +184,27 @@
 // }
 // let p1 = Person._new('alice', 12);//结果与let p1 = new Person('alice', 12)一致
 // console.log(p1);//{name: "alice", age: 12}
+
+// 12. 防抖
+// function debounce(fn,ms = 1000){
+//     let timer;
+//     return function(...args){
+//         if(timer){
+//             clearTimeout(timer)
+//         }
+//         timer = setTimeout(() => {
+//             fn.apply(this,args)
+//         }, ms);
+//     }
+// }
+// //test code
+// const test = ()=>{
+//     console.log('testFn code')
+// }
+// window.addEventListener('scroll',debounce(test))
+
+
+
+
+
+
