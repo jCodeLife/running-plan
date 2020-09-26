@@ -574,4 +574,17 @@
     // console.log(typeof undefined == typeof NULL)
     // 答案：true
     // 解析：js大小写敏感,NULL不是null,如果是typeof null返回的是object类型
+
+    // 42. 下面代码的执行结果是
+    // function fn(xx){
+    //     this.x = xx
+    //     return this
+    // }
+    // var x = fn(5)
+    // var y = fn(10)
+    // console.log(x.x)
+    // console.log(y.x)
+    // 答案：undefined  10
+    // 解析：在fn(5)执行完，window.x === window;在fn(10)执行的时候，window.x = 10，window.y === window;
+    // 因此x.x其实就是new Number(10).x,所以打印出undefined，y.x其实就是window.x ，所以打印出10
 </script>
