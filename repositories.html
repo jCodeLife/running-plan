@@ -587,4 +587,16 @@
     // 答案：undefined  10
     // 解析：在fn(5)执行完，window.x === window;在fn(10)执行的时候，window.x = 10，window.y === window;
     // 因此x.x其实就是new Number(10).x,所以打印出undefined，y.x其实就是window.x ，所以打印出10
+
+    // 43. 下面代码的执行结果什么？
+    // var x = 5;
+    // function fn(x){
+    //     x = 8
+    //     console.log(x)
+    // }
+    // fn()
+    // console.log(x)
+    // 答案：8、5
+    // 解析：fn打印的x是局部变量x，所以先打印8，外面打印全局window的x，所以打印出5
+
 </script>
