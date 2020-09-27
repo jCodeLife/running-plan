@@ -2,7 +2,33 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
+}
+
+table thead{
+  background-color: deepskyblue;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+table tr:nth-of-type(2n+1){
+  background-color:pink;
+}
+form{
+  font-size: 0.9em;
+}
+.wrap{
+  width: 600px;
+  margin: 10px auto;
+  display: flex;
+  justify-content:space-around;
+  background-color:rgb(253, 247, 247);
+  border-radius:4px;
+}
+button{
+  margin-top: 10px;
+  width: 100%;
+  color: rgb(224, 43, 31);
+  font-weight: 700;
 }
