@@ -1,32 +1,26 @@
 <template>
   <div>
-    <h1>{{ count }}</h1>
-    <button @click="change_count">点我</button>
-    <h1>{{ alice.name }}</h1>
-    <h1>{{ alice.age }}</h1>
-    <button @click="change_obj">change Object</button>
+    <div>
+      <h1>{{ count }}</h1>
+      <button @click="change_count">点我</button>
+    </div>
+    <div>
+      <h1>{{ alice.name }}</h1>
+      <h1>{{ alice.age }}</h1>
+      <button @click="change_obj">change Object</button>
+    </div>
   </div>
 </template>
 
 <script>
-import {ref,reactive} from 'vue';
+import useChangeObj from "./composition_tiny_js/change_obj";
+import useChangeCount from "./composition_tiny_js/count";
 export default {
   name: "Composition",
-  setup(){
-    let count = ref(0);
-    function change_count(){
-      count.value +=1;
-    }
-    const obj = {
-      name:'Alice',
-      age:18
-    }
-    const alice = reactive(obj);
-    function change_obj(){
-      alice.name = 'tom'
-      alice.age = 20
-    }
-    return{count, change_count,alice,change_obj}
-  }
+  setup() {
+    let { count, change_count } = useChangeCount();
+    let { alice, change_obj } = useChangeObj();
+    return { count, change_count, alice, change_obj };
+  },
 };
 </script>
