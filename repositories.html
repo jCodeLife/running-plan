@@ -633,7 +633,7 @@
     // 答案：1，false
     // 解析：一元正负默认隐式调用Number()；！默认取反后调用Boolean(),即!'str'相当于Boolean('str')
 
-    // 48. 下面代码的实行结果是？
+    // 48. 下面代码的执行结果是？
     // function Person(firstName,lastName){
     //     this.firstName = firstName
     //     this.lastName = lastName
@@ -643,4 +643,18 @@
     // console.log(p1)
     // console.log(p2)
     //答案：Person{fristName: 'Lewis', lastName: 'Carroll'}, undefined
+
+    // 50. 下面代码的执行结果是？
+    // (function(){
+    //     console.log(1)
+    //     setTimeout(() => {
+    //         console.log(2)
+    //     }, 1000);
+    //     setTimeout(() => {
+    //         console.log(3)
+    //     }, 0);
+    //     console.log(4)
+    // })()
+    // 答案：1 4 3 2
+    // 解析：考查的是执行队列的问题
 </script>
