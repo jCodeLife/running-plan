@@ -657,4 +657,13 @@
     // })()
     // 答案：1 4 3 2
     // 解析：考查的是执行队列的问题
+
+    // 51. 下面代码，当点击页面button时，event.target打印的是什么？
+    // <div onclick="console.log('first div',event.target)">
+    //     <div onclick="console.log('second div')">
+    //         <button onclick="console.log('button')">click me!</button>
+    //     </div>
+    // </div>
+    // 答案：event.target打印的是-->  <button onclick="console.log('button')">click me!</button>
+    // 解析：点击tutton时，由于事件冒泡会传递到父级元素触发相同事件。而event.target记录的是事件的目标源头
 </script>
