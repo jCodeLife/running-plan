@@ -666,4 +666,18 @@
     // </div>
     // 答案：event.target打印的是-->  <button onclick="console.log('button')">click me!</button>
     // 解析：点击tutton时，由于事件冒泡会传递到父级元素触发相同事件。而event.target记录的是事件的目标源头
+
+    // 52. 下面的代码执行结果是什么？
+    // function checkAge(data) {
+    //     if (data === { age: 18 }) {
+    //         console.log('我今年18岁了')
+    //     } else if (data == { age: 18 }) {
+    //         console.log('我今年成年了')
+    //     } else {
+    //         console.log('emmm...')
+    //     }
+    // }
+    // checkAge({ age: 18 })
+    // 答案：emmm...
+    // 解析：引用值对比的是地址
 </script>
