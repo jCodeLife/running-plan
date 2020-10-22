@@ -754,4 +754,13 @@
     // new F()
     // 答案：12 undefined 12
     // 解析：考点一 new关键字；考点二 预编译
+
+    // 61.下面代码的执行结果是什么？
+    // var arr = [1,2,3,4]
+    // delete arr[1]
+    // console.log(arr.length)
+    // delete arr[3]
+    // console.log(arr.length)
+    // 答案：4 4
+    // 解析：此处delete会移除arr数组中的第1位数据，虽然删除后该位置为empty，但数组的length不会变
 </script>
