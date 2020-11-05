@@ -125,3 +125,5 @@
 // class C implements B { }
 
 // 注意的是：类可以继承一个类，接口可以继承一个接口，一个类还能继承一个接口
+// interface A { }
+// class B extends A { }
