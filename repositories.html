@@ -919,4 +919,13 @@
     // let fn3 = new Function('a','b','return a+ b')
     // Function最后一个参数表示函数体，其余参数作为形参
 
+    // 79.下面代码的执行结果是什么？
+    // function Person(){}
+    // console.log(Person.prototype === Function);
+    // console.log(Person.prototype === Function.prototype);
+    // console.log(Person.__proto__ === Function.prototype);
+    // console.log(new Person().__proto__ === Person.prototype);
+    // 答案：false false true true
+    // 解析：关于原型。原型是function对象的属性，它定义了构造函数构造出对象的共有祖先
+
 </script>
