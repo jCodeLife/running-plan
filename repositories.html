@@ -939,5 +939,14 @@
     // 答案：f(){}   12    12
     // 解析：暗示全局变量
 
-
+    // 81.下面代码的执行结果是什么？
+    // var fn = (function(temp){
+    //     arguments[0] = 'Hello';
+    //     return function(){
+    //         console.log(temp,arguments[0])
+    //     }
+    // })('Mike')
+    // fn('Alice');
+    // 答案：Hello,Alice
+    // 解析：考查立即执行函数，以及形参与arguments相互映射
 </script>
