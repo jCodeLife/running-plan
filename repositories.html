@@ -967,4 +967,11 @@
     // 但最后一个语法有误：Uncaught SyntaxError: Invalid left-hand side expression in postfix operation
     // 解析：由于js执行的时候会先扫一遍看有没有语法错误，然后在一行一行的执行js语句。如果语法有误时，并不会执行其他语句。所以这里会出现SyntaxError
 
+    // 84.说说call和apply函数
+        // （1）call和apply都是Function.prototype上定义的函数，任何一个函数都有call和apply方法
+        // （2）当函数调用和call或apply方法时，call和apply会改变函数里头的this指向，然后执行该函数
+        // （3）call和apply唯一不同在于传参形式，
+        //     call第一个参数是this指向，第二个开始分别对应函数的参数，
+        //     apply第一个参数也是this指向，第二个参数是数组，数组里头分别对应形参
+        // （4）另外与call和apply相似的函数，bind()。该函数只是绑定函数的this指向，不会立即执行该函数。
 </script>
