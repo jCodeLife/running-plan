@@ -1001,4 +1001,18 @@
     // fn()()
     // 答案：1  2
     // 解析：fn()执行返回function(){},然后再执行，执行时里面this为window，所以this.val是1，val是局部变量val为2
+
+    // 87.下面代码执行结果是什么？
+    // var a = function () {
+    //     this.b = 2;
+    // }
+    // a.prototype.b = 20;
+    // b = new a();
+    // console.log(b.b);
+    // var b = 1000;
+    // a();
+    // console.log(this.b)
+    // 答案：2，2
+    // 解析：b被new出来的时候，里面自己保存了一个b，所以不用去原型上找，即第一个b.b打印出2
+    // 当a()执行的时候，由于里面this指向window，所以执行了window.b=2；所以最后全局答应this.b就是window.b,即打印出2
 </script>
