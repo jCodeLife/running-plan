@@ -1025,4 +1025,15 @@
     // 答案:a为{m:2}，b为{n:1,m:{m:2}}
     // 解析：这题需要特别注意，在js在读取a.m = a = { m: 2 }的时候，是从左往右；执行赋值是从右往左的。
     // 所以先开始a和b指向的空间{n:1}变成{n:1,m:{m:2}}，而a被重新赋值为{m:2}，所以最终解雇结果a为{m:2}，b为{n:1,m:{m:2}}
+
+    // 89.下面代码的执行结果是什么？
+    // function Foo(){}
+    // var f1 = new Foo()
+    // console.log(f1.constructor)
+    // Foo.prototype = {}
+    // var f2 = new Foo()
+    // console.log(f2.constructor)
+    // 答案：Foo(){},  Object(){}
+    // 解析：需要注意constructor是定义在原型上的东西，所以它会先找到自己的原型，然后再看constructor指向谁。
+    // 因此，在没改变原型前new出来的实例f1的constructor指向Foo，改变构造函数的原型后再new出来的对象f2的constructor就是Object(){}
 </script>
