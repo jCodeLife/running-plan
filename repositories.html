@@ -1036,4 +1036,14 @@
     // 答案：Foo(){},  Object(){}
     // 解析：需要注意constructor是定义在原型上的东西，所以它会先找到自己的原型，然后再看constructor指向谁。
     // 因此，在没改变原型前new出来的实例f1的constructor指向Foo，改变构造函数的原型后再new出来的对象f2的constructor就是Object(){}
+
+    // 90.下面代码的执行结果是什么？
+    // function Person(){
+    //     this.name = 'alice'
+    //     return true;
+    // }
+    // var p = new Person();
+    // console.log(p)
+    // 答案：Person {name: "alice"}
+    // 解析：构造函数构造对象时，如果构造函数本身显示return 原始值，会自动忽略，任然返回构造出来的this，如果显示返回引用值，那么this会被覆盖
 </script>
