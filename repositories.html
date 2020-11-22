@@ -1046,4 +1046,11 @@
     // console.log(p)
     // 答案：Person {name: "alice"}
     // 解析：构造函数构造对象时，如果构造函数本身显示return 原始值，会自动忽略，任然返回构造出来的this，如果显示返回引用值，那么this会被覆盖
+
+    // 91.下面代码的执行结果是什么？
+    // var val = 1;
+    // val.length = 2;
+    // console.log(val.length)
+    // 答案：undefined
+    // 解析：调用原始类型的什么属性，其实是js内部将原始值变成包装类对象，执行完之后删除该对象。所以val.length为undefined
 </script>
