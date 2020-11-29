@@ -1084,4 +1084,14 @@
     // true && d();//&&前面为true后面会再看，所以这里执行d()，打印出4
     // 答案：3  4
     // 解析：主要&&和||运算符的特点，原则是根据前面的真假值来判断是否还要执行后面的表达式
+
+    // 94.下面代码的执行结果是什么？
+    // function fn(a){
+    //     let a = 10;
+    //     console.log(a)
+    // }
+    // fn(1)
+    // 答案：Uncaught SyntaxError: Identifier 'a' has already been declared
+    // 解析：函数内，用let或者const声明的变量，不能与形参名相同，否则会报错
+    
 </script>
