@@ -1064,4 +1064,24 @@
     // console.log(a)
     // 答案：function a(){...}  function a(){...}  Uncaught ReferenceError: a is not defined
     // 解析：具名函数表达式的特点，函数名可以在函数内部访问，但是无法被修改。
+
+    // 93.下面代码的执行结果是什么？
+    // function a() {
+    //     console.log(1)
+    // }
+    // function b() {
+    //     console.log(2)
+    // }
+    // function c() {
+    //     console.log(3)
+    // }
+    // function d() {
+    //     console.log(4)
+    // }
+    // false && a();//&&前面为false后面不会再看，所以这里不执行a()
+    // true || b();//||前面为true后面不会再看，所以这里不执行b()
+    // false || c();//||前面为false后面会再看，所以这里执行c()，打印出3
+    // true && d();//&&前面为true后面会再看，所以这里执行d()，打印出4
+    // 答案：3  4
+    // 解析：主要&&和||运算符的特点，原则是根据前面的真假值来判断是否还要执行后面的表达式
 </script>
