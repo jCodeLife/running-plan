@@ -51,8 +51,8 @@
 
     // 4. 模拟实现placeholder作用
     // <input type="text" name="user" value="请输入用户名" style="color:#999"
-    //  onfocus="if(this.value=='请输入用户名'){this.value = '';this.style.color='#424242'}"
-    //  onblur="if(this.value == ''){this.value = '请输入用户名';this.style.color='#999'}" >
+    //     onfocus="if(this.value=='请输入用户名'){this.value = '';this.style.color='#424242'}"
+    //     onblur="if(this.value == ''){this.value = '请输入用户名';this.style.color='#999'}" >
 
 
     // 5. 下面代码的执行结果是什么
@@ -67,7 +67,7 @@
     // var arr = [1,2,3,4,5];
     // arr.length = 1;
     // 答案：[1]
-    //解析：length会影响数组
+    // 解析：length会影响数组
 
 
     // 7.  下面代码执行结果是什么
@@ -185,7 +185,7 @@
     // AO:{
     //     x:3
     // }
-    //同时返回一个对象，形成闭包，obj={
+    // 同时返回一个对象，形成闭包，obj={
     //                             x: 3,
     //                             fun: function(a, b) {
     //                                     x = a + b;
@@ -411,7 +411,7 @@
     //     console.log(x);//undefined
     //     console.log(y);//2
     // })();
-    //答案: 1 undefined 2
+    // 答案: 1 undefined 2
     // 解析：最开始执行匿名立即执行函数参数的作用域中，由于预编译将变量x和y提升了值为undefined
     // 当执行catch函数时，里面有自己的形参变量x，这里的值是错误信息：Error,后面赋值为1；所以里面catch中先打印Error后打印1
     // y被赋值为2;
@@ -624,8 +624,8 @@
     // }
     // console.log(typeof a)
     // console.log(typeof b)
-    //答案：alice 10 undefined object
-    //解析：引用值的赋值是地址，地址指向一个对象。暗示全局变量属于window所有
+    // 答案：alice 10 undefined object
+    // 解析：引用值的赋值是地址，地址指向一个对象。暗示全局变量属于window所有
 
     // 47. 下面代码的执行结果是？
     // console.log(+true)
@@ -642,7 +642,7 @@
     // let p2 =  Person('Lewis','Carroll')
     // console.log(p1)
     // console.log(p2)
-    //答案：Person{fristName: 'Lewis', lastName: 'Carroll'}, undefined
+    // 答案：Person{fristName: 'Lewis', lastName: 'Carroll'}, undefined
 
     // 50. 下面代码的执行结果是？
     // (function(){
@@ -793,7 +793,7 @@
     // --
     // false-false-false
     // 0-0-0
-    //解析：数组的join方法会将数组成员安装指定字符连接；特别的，如果join中数组成员是null或者undefined就会当成空串
+    // 解析：数组的join方法会将数组成员安装指定字符连接；特别的，如果join中数组成员是null或者undefined就会当成空串
 
     // 65.如何获取一个大于等于0且小于等于9的随机整数？
     // console.log(Math.floor(Math.random()*10))
@@ -1093,5 +1093,82 @@
     // fn(1)
     // 答案：Uncaught SyntaxError: Identifier 'a' has already been declared
     // 解析：函数内，用let或者const声明的变量，不能与形参名相同，否则会报错
-    
+
+    // 95.下面代码的执行结果是什么？
+    // function fn1(){
+    //     var a = 1;
+    // }
+    // function fn2(){
+    //     return;
+    // }
+    // console.log(fn1(),fn2())
+    // 答案：undefined undefined
+    // 解析：没有返回的函数，默认返回undefined；只写return的就相当于没写返回，也是undefined
+
+    // 96.手写圣杯继承
+    // var inherit = (function () {
+    //     function F() { };
+    //     return function (Target, Origin) {
+    //         F.prototype = Origin.prototype;
+    //         Target.prototype = new F();
+    //         Target.prototype.constructor = Target;
+    //         Target.prototype._super = Origin.prototype;
+    //     }
+    // }());
+
+    // 97.封装一个函数mul，用于计算n的阶层
+    // function mul(n){
+    //     if(n==0||n==1){
+    //         return 1;
+    //     }
+    //     return n*arguments.callee(n-1);
+    // }
+
+    // 98.封装一个函数bytesLengh，用于查找任意字符串的字节长度
+    // function bytesLengh(str) {
+    //     var count = str.length;
+    //     for (var i = 0; i < str.length; i++) {
+    //         if (str.charCodeAt(i) > 255){
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
+    // charCodeAt(n)：返回字符串第n位字符的unicode编码，大于255字节长度为2，小于为1
+
+    // 99.封装一个方法insertAfter,功能类似insertBefore
+    // Element.prototype.insertAfter = function (targetNode, afterNode) {
+    //     var beforeNode = afterNode.nextElementSibling;
+    //     if (beforeNode) {
+    //         this.appendChild(targetNode);
+    //     }
+    //     this.insertBefore(targetNode, beforeNode);
+    // }
+
+    // 100. 手动封装异步加载js的方法asyncLoadScript
+    // function asyncLoadScript(url, callback) {
+    //     var script = document.createElement('script');
+    //     script.type = 'text/javascript';
+    //     if (script.readyState) {//readyState是IE中的状态码
+    //         script.onreadystatechange = function () {
+    //             //绑定监听状态码的事件，IE状态码变成complete或者loaded，表示该元素加载完
+    //             if (script.readyState == "complete" || script.readyState == "loaded") {
+    //                 callback();//回调函数，当script加载完后调用
+    //             }
+    //         }
+    //     } else {
+    //         //非IE 用onload事件，表示当script加载完时
+    //         script.onload = function () {
+    //             callback();//回调函数，当script加载完后调用
+    //         }
+    //     }
+    //     script.src = url;//放在这，是为了避免IE立即加载完，立即加载完就不再触发onreadystatechange
+    //     document.head.appendChild(script);//加载到页面中去
+    // }
+    // //=============test code=========================
+    // asyncLoadScript('./js/tools.js', function () {
+    //     //code
+    //     console.log('按照加载完了：' + url + '文件')
+    // });
+
 </script>
