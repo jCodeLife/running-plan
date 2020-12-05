@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: skyblue;
+        }
+
+        .content {
+            width: 90vw;
+            height: 90vh;
+            margin: 5vh auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            letter-spacing:2px
+        }
+
+        .content section:nth-child(1) {
+            font-size: 2rem;
+        }
+
+        .content section:nth-child(2) {
+            font-size: 13rem;
+            align-self: center;
+        }
+
+        .content section:nth-child(2) :nth-last-child(1) {
+            font-size: 9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <section></section>
+        <section></section>
+    </div>
+    <script>
+        let date = document.getElementsByTagName('section')[0],
+            time = document.getElementsByTagName('section')[1],
+            dt,
+            year,
+            month,
+            d,
+            hours,
+            minutes,
+            seconds;
+        setInterval(() => {
+            dt = new Date()
+            year = dt.getFullYear()
+            month = dt.getMonth()
+            d = dt.getDate()
+            hours = dt.getHours() > 9 ? dt.getHours() : '0' + dt.getHours()
+            minutes = dt.getMinutes() > 9 ? dt.getMinutes() : '0' + dt.getMinutes()
+            seconds = dt.getSeconds() > 9 ? dt.getSeconds() : '0' + dt.getSeconds()
+            date.innerHTML = `
+            <span>${year}年</span><span>${month}月</span><span>${d}日 </span>           
+            `;
+            time.innerHTML = `
+            <span>${hours}:</span><span>${minutes}:</span><span>${seconds}</span>  
+            `
+        }, 1000);
+    </script>
+</body>
+
+</html>
