@@ -1180,4 +1180,11 @@
     // 清空：arr.length = 0;
     // 截断：arr.length = n;其中n表示需要截断的位置
 
+    // 102.下面代码的执行结果是什么？
+    var arr = [1,0,'',null,undefined,false,true,NaN]
+    var res = arr.filter(Boolean)
+    console.log(res)
+    // 答案：[1,true]
+    // 解析：数组的filter函数，用于遍历数组，将符合条件的成员过滤出来。
+
 </script>
