@@ -1193,5 +1193,18 @@
     // }
     
     // 104.标准盒模型下，块级元素宽度如何计算？
-    // 元素宽度 = 中间content宽度 + 左右padding + 左右border
+    // 元素宽度 = content宽度 + 左右padding + 左右border
+
+    // 105.字符串对象中的substring函数和slice函数的区别？
+    // 相同点：
+    // （1）substring与slice都是用于字符串截取
+    // （2）都可以接受两个参数start和end，分别表示开始索引和结束索引位（不包含end位置）
+    // 不同的是：
+    // （1）如果end<start
+    //     substring会将start和end交换;
+    //     而slice会直接返回空串,表示没截取到
+    // （2）如果start或者end有负数
+    //     substring会把小于0的数，当成0来计算
+    //     而slice允许是负数，表示倒数第几位开始或结束
+
 </script>
