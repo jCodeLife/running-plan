@@ -1226,10 +1226,23 @@
     // s1 em作为字体单位，相对于父元素字体大小；line-height继承父元素计算值
     // s2 em作为行高单位时，相对于自身字体大小
 
-    
-    <div class="p2">
-        <div class="s5">1</div>
-        <div class="s6">1</div>
-    </div>
+    // 106.另一道和em有关的题，问s5、s6的font-size和line-height分别是多少px？
+    //html结构
+    // <div class="p2">
+    //     <div class="s5">1</div>
+    //     <div class="s6">1</div>
+    // </div>
+    // 样式
+    // .p2 {font-size: 16px; line-height: 2;}
+    // .s5 {font-size: 2em;}
+    // .s6 {font-size: 2em; line-height: 2em;}
+    // 答案：
+    // p2：font-size: 16px; line-height: 32px
+    // s5：font-size: 32px; line-height: 64px
+    // s6：font-size: 32px; line-height: 64px 
+    // 解释
+    // p2 line-height: 2自身字体大小的两倍
+    // s5 数字无单位行高，继承原始值，s5的line-height继承的2，自身字体大小的两倍
+    // s6 无需解释
 
 </script>
