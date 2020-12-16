@@ -6,11 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(228, 109, 128);
+    }
+</style>
 
 <body>
-    <div></div>
+    <div id="sprite">111111111</div>
 </body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
 <script>
+    $('#sprite').animate({
+        opacity: 0.25,
+        fontSize: 10
+    }, {
+        ?duration: 5000
+    })
+
 
 </script>
 
