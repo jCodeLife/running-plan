@@ -1300,4 +1300,20 @@
     // alert(fn())
     // 答案：分别弹出1 和 undefined
     // 解析：先执行fn()，弹出1，函数返回值为undefined。所以alert(fn())相当于执行alert(undefined)
+
+    // 113.下面代码的执行结果是什么？
+    // function fn(){
+    //     var a = 0
+    //     function innerFn(){
+    //         a++;
+    //         console.log(a)
+    //     }
+    //     return innerFn;
+    // }
+    // fn()()
+    // var newFn = fn()
+    // newFn()
+    // newFn()
+    // 答案：1  1  2
+    // 解析：闭包实现私有变量
 </script>
