@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(228, 109, 128);
+    }
+</style>
+
+<body>
+    <div>abc</div>
+    <button>addEvent</button>
+</body>
+
+<script>
+    function bindEvent(ele, type, handleFn) {
+        if (ele.addEventListener) {
+            ele.addEventListener(type, handleFn, false);
+        } else if (ele.attachEvent) {
+            ele.attachEvent('on' + type, function () {
+                handleFn.call(ele);
+            });
+        } else {
+            ele['on' + type] = handleFn
+        }
+    }
+    function removeEvent(ele, type, fn) {
+        if (ele.removeEventListener) {
+            ele.removeEventListener(type, fn, false)
+        } else if (ele.detachEvent) {
+            ele.detachEvent('on' + type, function () {
+                console.log(this)
+                fn.bind(this, ele)
+            })
+        } else {
+            ele['on' + type] = ''
+        }
+    }
+    var odiv = document.getElementsByTagName('div')[0]
+    var obtn = document.getElementsByTagName('btn')[0]
+    function fn(){
+        console.log('abc')
+    }
+    bindEvent(odiv,'click',fn)
+   
+    setTimeout(function(){
+        removeEvent(odiv,'click',fn)
+        console.log('事件被移除了')
+    },5000)
+
+</script>
+
+</html>

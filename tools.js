@@ -49,7 +49,7 @@
 
 
 
-//6. 封装一个绑定事件的方法，兼容所有浏览器
+//6. 封装一个绑定和接触事件的方法，兼容所有浏览器
 // function bindEvent(ele, type, handleFn) {
 //     if (ele.addEventListener) {
 //         ele.addEventListener(type, handleFn, false);
@@ -61,6 +61,19 @@
 //         ele['on' + type] = handleFn
 //     }
 // }
+// function removeEvent(ele,type,fn){
+//     if(ele.removeEventListener){
+//         ele.removeEventListener(type,fn,false)
+//     }else if(ele.detachEvent){
+//         ele.detachEvent('on'+type,function(){
+//             fn.bind(this,ele)
+//         })
+//     }else{
+//         ele['on'+type] = ''
+//     }
+// }
+
+
 
 
 // 7. 手动封装异步加载js的方法
