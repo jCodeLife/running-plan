@@ -1419,4 +1419,17 @@
     // }
     // obj.foo()
     // 答案：1
+    // 解析：setTimeout里面this指向window
+
+    // 124.下面代码的执行结果是什么？
+    // var x = 1;
+    // function fn() {
+    //     this.x = 2;
+    //     return x
+    // }
+    // var f = new fn();
+    // console.log(f.x)
+    // 答案：2
+    // 解析：关于new关键字，在通过new生成对象时，里面this执行该对象，并且返回该对象。
+    // 但是要注意，如果显示返回一个引用值，则new的结果为该引用值
 </script>
