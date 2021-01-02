@@ -1438,4 +1438,13 @@
     // console.log(typeof foo)
     // 答案：undefined
     // 解析：具名函数表达式，函数名只会在函数里面使用。在函数外部是不存在的
+
+    // 126.下面代码的执行结果是？
+    // var a = 12;
+    // if(true){
+    //     console.log(a)
+    //     let a = 2
+    // }
+    // 答案：Uncaught ReferenceError: Cannot access 'a' before initialization
+    // 解析：TDZ的原因，默认不能再定义之前使用
 </script>
