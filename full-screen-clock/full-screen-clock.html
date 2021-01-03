@@ -10,9 +10,10 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             background-color: black;
-            color:#409EFF
+            color: #3dffff
         }
 
         .content {
@@ -22,7 +23,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            letter-spacing:2px
+            letter-spacing: 2px
         }
 
         .content section:nth-child(1) {
@@ -30,7 +31,7 @@
         }
 
         .content section:nth-child(2) {
-            font-size: 17rem;
+            font-size: 16rem;
             align-self: center;
         }
 
@@ -38,6 +39,12 @@
             font-size: 13rem;
         }
     </style>
+    <script>
+        window.onload = alert(`温馨提示：
+    1.请使用pc端浏览器打开
+    2.按F11可全屏哦
+    `)
+    </script>
 </head>
 
 <body>
@@ -58,7 +65,7 @@
         setInterval(() => {
             dt = new Date()
             year = dt.getFullYear()
-            month = dt.getMonth()
+            month = dt.getMonth() + 1
             d = dt.getDate()
             hours = dt.getHours() > 9 ? dt.getHours() : '0' + dt.getHours()
             minutes = dt.getMinutes() > 9 ? dt.getMinutes() : '0' + dt.getMinutes()

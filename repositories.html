@@ -1447,4 +1447,11 @@
     // }
     // 答案：Uncaught ReferenceError: Cannot access 'a' before initialization
     // 解析：TDZ的原因，默认不能再定义之前使用
+
+    // 127.下面代码的执行结果是什么？
+    // var a = [1,2,3,4,1,2,3,4,5,6,'a',undefined,null,false,true]
+    // var s = new Set(a)
+    // console.log(s.size)
+    // 答案：11
+    // 解析：Set数据结果换将传入的数组去重
 </script>
