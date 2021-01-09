@@ -1499,4 +1499,14 @@
     // console.log(f.prototype)
     // 答案：undefined
     // 解析：prototype是函数身上的属性，并非是实例身上的属性
+
+    // 133.下面代码的执行结果是什么？
+    // if(false){
+    //     var a = 12
+    //     let b = 5
+    // }
+    // console.log(a)
+    // console.log(b)
+    // 答案：undefined   Uncaught ReferenceError: b is not defined
+    // 解析：预编译的时候var声明的变量会有提升效果，值为undefined。let声明的遍历有块级作用域的概念，在外面不能使用。
 </script>
