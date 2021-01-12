@@ -1526,4 +1526,17 @@
     // 答案：1,2,'c'
     // 解析：解构赋值，a和b分别赋值为1,2；而c不同，变量默认没有赋值的时候就是undefined，同理如果赋值为undefined相当于没有赋值，所以使用默认值'c''
 
+    // 136.下面代码的执行后，ul里面的内容顺序是为？
+    // HTML代码
+    // <ul id='list'>
+    //     <li>1</li>
+    //     <li>2</li>
+    //     <li>3</li>
+    // <ul>
+    // js代码
+    // var list =  document.getElementById('list')
+    // var li = list.querySelectorAll('li')
+    // list.replaceChild(li[2],li[1])
+    // list.insertBefore(li[1],list.children[2])
+    // 答案：1 3 2
 </script>
