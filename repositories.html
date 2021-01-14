@@ -1550,4 +1550,30 @@
     // a(3)
     // 答案：1  Uncaught TypeError: a is not a function
     // 解析：预编译导致变量声明提升以及函数整体提升，预编译之后，执行语句将a赋值为1,所以在执行a(3)会报错
+
+    // 138.下面代码的执行结果是什么
+    // var name = 'Alice';
+    // (function(){
+    //     if(name === 'undefined'){
+    //         var name = 'Tom'
+    //         console.log(name)
+    //     }else{
+    //         console.log(name)
+    //     }
+    // })()
+    // 答案：Tom
+    // 解析：立即函数执行时，由于if语句中有声明name，所以在预编译的时候会将name提升，并且值为undefined，所以打印Tom
+
+    // 139.下面代码的执行结果是什么
+    // var name = 'Alice'
+    // (function(){
+    //     if(name === 'undefined'){
+    //         var name = 'Tom'
+    //         console.log(name)
+    //     }else{
+    //         console.log(name)
+    //     }
+    // })()
+    // 答案： Uncaught TypeError: "Alice" is not a function
+    // 解析：由于'alice'后面没有结束符号，下面跟着()，便以为是函数。导致结果报错
 </script>
