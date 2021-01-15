@@ -1576,4 +1576,17 @@
     // })()
     // 答案： Uncaught TypeError: "Alice" is not a function
     // 解析：由于'alice'后面没有结束符号，下面跟着()，便以为是函数。导致结果报错
+
+    // 140.下面代码的执行结果是什么？
+    // var a = 1;
+    // function fn(){
+    //     a = 2;
+    //     console.log(a);
+    //     console.log(this.a);
+    //     var a;
+    //     console.log(a)
+    // }
+    // fn()
+    // 答案：2 1 2
+    // 解析：考查预编译的知识点
 </script>
