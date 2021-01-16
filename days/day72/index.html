@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh">
+<style>
+    body {
+        /* background:#2d0f0f url(images/smashing.jpg) top center;background-repeat:no-repeat; */
+        background-color: #add8e6;
+    }
+</style>
+<body></body>
+<script src="./jquery.min.js"></script>
+<script src="./snowfall.jquery.js"></script>
+<script>
+    $(document).snowfall({
+        image: "images/flake_black.png",
+        flakeCount: 150,
+        minSpeed: 3,
+        minSize: 3,
+        maxSize: 20,
+    });
+</script>
+</html>
