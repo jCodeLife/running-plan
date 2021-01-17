@@ -1597,4 +1597,17 @@
     // console.log(a)
     // 答案：undefined
     // 解析：预编译会将if语句里面的变量声明a提升，值为undefined
+
+    // 142.下面代码的执行结果是？
+    // var val = 1;
+    // var obj = {
+    //     val: 2,
+    //     del: function () {
+    //         this.val *= 2;
+    //         console.log(val)
+    //     }
+    // }
+    // obj.del()
+    // 答案：1
+    // 解析：我们知道执行obj.del()之后，obj.val变成了4，但是需要注意val找变量的时候，会沿着作用域查找，会找到外面被声明的的val，而非obj对象上的。
 </script>
