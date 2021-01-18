@@ -1610,4 +1610,18 @@
     // obj.del()
     // 答案：1
     // 解析：我们知道执行obj.del()之后，obj.val变成了4，但是需要注意val找变量的时候，会沿着作用域查找，会找到外面被声明的的val，而非obj对象上的。
+    
+    // 143.下面代码的执行结果是什么？
+    // var name = 'Alice';
+    // var  obj = {
+    //     name:'Tom',
+    //     getName:function(){
+    //         return function(){
+    //             return this.name
+    //         }
+    //     }
+    // }
+    // console.log(obj.getName()())
+    // 答案：Alice
+    // 解析：谁调用this指向谁，obj.getName()执行时this指向obj，而执行完后返回一个function，这个function执行时没人调用，所以里面this指向window，最后输出window上的name
 </script>
