@@ -1624,4 +1624,19 @@
     // console.log(obj.getName()())
     // 答案：Alice
     // 解析：谁调用this指向谁，obj.getName()执行时this指向obj，而执行完后返回一个function，这个function执行时没人调用，所以里面this指向window，最后输出window上的name
+
+    // 144.下面代码的执行结果是什么？
+    // var name = 'Alice';
+    // var  obj = {
+    //     name:'Tom',
+    //     getName:function(){
+    //         var self =  this;
+    //         return function(){
+    //             return self.name
+    //         }
+    //     }
+    // }
+    // console.log(obj.getName()())
+    // 答案：Tom
+    // 解析：self将this保存下来了，也就是self指向的是obj
 </script>
