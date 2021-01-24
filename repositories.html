@@ -1610,7 +1610,7 @@
     // obj.del()
     // 答案：1
     // 解析：我们知道执行obj.del()之后，obj.val变成了4，但是需要注意val找变量的时候，会沿着作用域查找，会找到外面被声明的的val，而非obj对象上的。
-    
+
     // 143.下面代码的执行结果是什么？
     // var name = 'Alice';
     // var  obj = {
@@ -1664,11 +1664,24 @@
     // 答案：undefined
     // 解析：立即执行函数中，参数foo的值为{foo:{bar:1}，所以foo.bar是不存在的
 
-    // 158.下面代码的执行结果是什么？
+    // 148.下面代码的执行结果是什么？
     // function f(){
     //     return f;
     // }
     // console.log(new f() instanceof f)
     // 答案：false
     // 解析：new f()返回的是f函数本身，即相当于问f instanceof f，答案是false
+
+    // 149.下面代码的执行结果是什么？
+    // function A() { }
+    // A.prototype.n = 1;
+    // var b = new A();
+    // A.prototype = {
+    //     n:2,
+    //     m:3
+    // }
+    // var c = new A()
+    // console.log(b.n,b.m)
+    // console.log(c.n,c.m)
+    // 答案：1 undefined 2 3
 </script>
