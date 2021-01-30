@@ -1724,4 +1724,12 @@
     // c(1)
     // 答案：function c(a){...}  function a(){}
     // 解析：预编译导致变量和函数提升，并且先变量声明提升，而后函数整体提升
+
+    // 155.下面代码的执行结果是什么？
+    // console.log(typeof a)
+    // function a(){}
+    // var a;
+    // console.log(typeof a)
+    // 答案：function function
+    // 解析：预编译先变量声明提升，而后函数整体提升
 </script>
