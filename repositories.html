@@ -1771,4 +1771,15 @@
     // console.log(foo.hasOwnProperty("bar"))
     // console.log(foo.hasOwnProperty('g'))
     // 答案：1 true false true
+
+    // 160.下面代码的执行结果是什么？
+    // Object.prototype.a = 1;
+    // var obj = {
+    //     b:2
+    // }
+    // for(var i in obj){
+    //     console.log(obj[i])
+    // }
+    // 答案：2  1
+    // 解析：for in循环中，会先变量obj自身属性的key，然后再去变量原型上的属性
 </script>
