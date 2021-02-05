@@ -1782,4 +1782,21 @@
     // }
     // 答案：2  1
     // 解析：for in循环中，会先变量obj自身属性的key，然后再去变量原型上的属性
+
+    // 161.下面代码的执行结果是什么？
+    // function fn1() {
+    //     return {
+    //         a: 1
+    //     }
+    // }
+    // function fn2() {
+    //     return
+    //     {
+    //         b: 1
+    //     }
+    // }
+    // console.log(fn1())
+    // console.log(fn2())
+    // 答案：{a:1}  undefined
+    // 解析：当函数return那行没跟任何东西时，则会当成没有任何返回内容
 </script>
