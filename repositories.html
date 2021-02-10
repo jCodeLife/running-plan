@@ -1826,5 +1826,18 @@
     // 165.下面代码的执行结果是什么呢？
     // console.log('b' + 'a' + +'a' + 'a')
     // 答案：baNaNa
+    // 解析：前面'b' + 'a'变成'ba'，接着+（+"a"）,+'a'的一元运算符，结果是NaN，所以变成baNaN，最后加'a'
 
+    // 166.下面代码的执行结果是什么？
+    // var obj = {
+    //     a: 1,
+    //     b: 2
+    // }
+    // Object.setPrototypeOf(obj, { c: 3 })
+    // Object.defineProperty(obj,'d',{value:4,enumerable:false})
+    // for (const key in obj) {
+    //     console.log(key)
+    // }
+    // 答案：a b c
+    // 解析:由于d属性在定义的时候，其配置设置项enumerable值为false，所以在forin的时候，该属性是不会被遍历出来的
 </script>
