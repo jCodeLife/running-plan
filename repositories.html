@@ -1840,4 +1840,18 @@
     // }
     // 答案：a b c
     // 解析:由于d属性在定义的时候，其配置设置项enumerable值为false，所以在forin的时候，该属性是不会被遍历出来的
+
+    // 167.下面代码的执行结果是什么？
+    // var x = 1;
+    // var f = {
+    //     x:2,
+    //     getx:function(){
+    //         return this.x;
+    //     }
+    // }
+    // console.log(f.getx())
+    // var xGetter = f.getx;
+    // console.log(xGetter())
+    // 答案：2 1
+    // 解析：谁调用，this指向谁
 </script>
