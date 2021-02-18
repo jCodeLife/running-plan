@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
 <script>
     // 1.【关于函数参数】下面代码的执行结果是什么
     // function getInfo(member, year) {
@@ -1920,4 +1931,17 @@
     // console.log(sum(1,2))
     // console.log(sum(1)(2))
     // 答案：3  3
+
+    // 175.执行下面代码，当用于点击页面中的“按钮”时，会打印出什么？
+    // for (var i = 0; i < 5; i++) {
+    //     var btn = document.createElement('button');
+    //     btn.appendChild(document.createTextNode('按钮' + i));
+    //     btn.addEventListener('click', function () {
+    //         console.log(i);
+    //     });
+    //     document.body.appendChild(btn)
+    // }
+    // 答案：每个按钮被点击时，都会打出一个5
+    // 解析：在点击之前，for循环已经执行完，当这个时候访问i时，已经变成了5
 </script>
+</html>
