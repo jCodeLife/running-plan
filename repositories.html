@@ -1943,5 +1943,21 @@
     // }
     // 答案：每个按钮被点击时，都会打出一个5
     // 解析：在点击之前，for循环已经执行完，当这个时候访问i时，已经变成了5
+
+    // 176.下面代码的执行结果是什么？
+    // var length = 10;
+    // function fn(){
+    //     console.log(this.length)
+    // }
+    // var obj={
+    //     length:5,
+    //     method:function(fn){
+    //         fn();
+    //         arguments[0]();
+    //     }
+    // }
+    // obj.method(fn,1)
+    // 答案：10 2
+    // 解析：fn执行时，this指向window；而使用arguments获取参数fn执行时，fn里头的this执行该arguments，而arguments中有个length属性，表示传递的参数个数
 </script>
 </html>
