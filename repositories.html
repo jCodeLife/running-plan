@@ -1959,5 +1959,13 @@
     // obj.method(fn,1)
     // 答案：10 2
     // 解析：fn执行时，this指向window；而使用arguments获取参数fn执行时，fn里头的this执行该arguments，而arguments中有个length属性，表示传递的参数个数
+
+    // 177.下面代码的执行结果是什么？
+    // (function(x){
+    //     return (function(y){
+    //         console.log(x)
+    //     }(2))
+    // }(1))
+    // 答案：1
 </script>
 </html>
