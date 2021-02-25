@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
 </body>
 <script>
     // 1.【关于函数参数】下面代码的执行结果是什么
@@ -1977,5 +1979,21 @@
     // console.log(a[b])
     // 答案：456
     // 解析：当对象作为对象的key时，会变成[object Object],所以a[b]和a[b]其实是一样的
+
+    // 179.下面代码的执行结果是什么？
+    // var obj = {
+    //     foo: 'bar',
+    //     fn: function () {
+    //         var self = this;
+    //         console.log(this.foo, self.foo);//
+    //         (function () {
+    //             console.log(this.foo, self.foo);//undefined bar
+    //         }());
+    //     }
+    // }
+    // obj.fn();
+    // 答案：bar bar undefined bar
+    // 解析：obj.fn执行时，fn里面this指向调用者obj，而当fn里头的立即执行函数执行时，里面的this指向window
 </script>
+
 </html>
