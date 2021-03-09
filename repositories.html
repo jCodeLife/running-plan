@@ -2024,13 +2024,29 @@
     // 解析：关于&&运算符，当&&前面的表达式的值转成布尔值为真时，则返回后面表达式的结果
 
     // 184.下面代码的执行结果是什么？
-    var x = 5, y = 12;
-    console.log(x < 10 && y > 1)
-    console.log(x == 5 || y == 5)
-    console.log(!(x == y))
-    console.log(!!x == x)
+    // var x = 5, y = 12;
+    // console.log(x < 10 && y > 1)
+    // console.log(x == 5 || y == 5)
+    // console.log(!(x == y))
+    // console.log(!!x == x)
     // 答案：true true true false
     // 解析：关于逻辑运算符的基本使用
+
+    // 185.如何遍历对象身上的属性，非原型继承而来的属性？
+    // 答案：可通过for in 循环遍历出所有属性，再通过对象身上的hasOwnProperty()判断遍历出来属性是对象身上的还是原型上的，代码如下
+    // function fn(obj) {
+    //     if(typeof obj === 'object'){
+    //         //不考虑数组
+    //         for (const key in obj) {
+    //             if (Object.hasOwnProperty.call(obj, key)) {
+    //                 console.log(key)
+    //             }
+    //         }
+    //     }else{
+    //         return
+    //     }
+    // }
+    // fn({a:1})
 </script>
 
 </html>
