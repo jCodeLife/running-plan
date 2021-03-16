@@ -2047,6 +2047,56 @@
     //     }
     // }
     // fn({a:1})
+
+
+    // 186.题目：
+    // ｛a:[{id: xxx，parentId: xxx}]，b:[{id: xxx，parentId: xxx}，{id: xxx，parentId: xxx}]｝
+    // 删除对象中a，b数组中所有对象的id 和 parentID，并给每个对象添加一个isHstory属性
+    // 要的效果：｛a:[{isHistory: 1}]，b:[{isHistory: 1}，{isHistory: 1}］｝
+    // 解答：
+    // function delId(obj) {
+    //     //传入必须是对象，否则不处理
+    //     if (typeof obj == "object" && (!Array.isArray(obj))) {
+    //         //遍历对象中的每一项
+    //         for (const key in obj) {
+    //             if (Object.hasOwnProperty.call(obj, key)) {
+    //                 const item = obj[key];
+    //                 //找出对象中类型为数组的属性
+    //                 if (Array.isArray(item)) {
+    //                     // 遍历数组
+    //                     for (const val of item.values()) {
+    //                         // 找出数组中类型是对象的所有成员，删除和添加属性即可
+    //                         if (typeof val == "object"&&(!Array.isArray(val))) {
+    //                             console.log(val)
+    //                             // 1.删除对象的id 和 parentId属性
+    //                             delete val.id;
+    //                             delete val.parentId;
+    //                             // 2.对象添加一个isHstory属性
+    //                             val.isHistory = 1;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // // 测试代码
+    // const obj = {
+    //     a: [{ id: 'xxx', parentId: 'xxx' }],
+    //     b: [{ id: 'xxx', parentId: 'xxx' }, { id: 'xxx', parentId: 'xxx' }]
+    // }
+    // delId(obj);
+    // console.log(obj);//｛a:[{isHistory: 1}]，b:[{isHistory: 1}，{isHistory: 1}］｝
+
+    // 187.关于JS赋值操作符描述错误的是？
+    // A.赋值操作符的顺序是从左往右
+    // B.i=j=k="hello"的含义是将三个变量都初始化为"hello"
+    // C.赋值表达式的顺序是从右往左
+    // D.赋值表达式的值就是右操作数的值
+    // 答案：A
+
+    // 188.关于in操作符错误的是？
+    // A.for...in运算符不可用于数组元素的遍历
 </script>
 
 </html>
