@@ -2114,7 +2114,7 @@
     // console.log(1>=-Infinity)
     // console.log('100'+'200')
     // 答案：true true 100200
-    
+
     // 191.下面说法正确的是（多选）
     // A.直接调用Math.Max时它并不接受数组
     // B.对于系统内置对象，使用toString不会得到想要的结果，而是[object Objcet]
@@ -2151,6 +2151,60 @@
     // }
     // foo('var a = 1')
     // 答案：ReferenceError：a is not defined
+    // 解析：在严格模式下，eval运行时有其自己的词法作用域，意味着其中的声明无法修改所在的作用域
+
+    // 195.下面代码的执行结果是什么？
+    // var a = 1;
+    // (function foo(){
+    //     var a = 2;
+    //     console.log(a)
+    // })()
+    // console.log(a)
+    // 答案：2  1
+
+    // 196.下面代码的执行结果是什么？
+    // var a = 1;
+    // (function foo(lobal){
+    //     var a = 2;
+    //     console.log(a)
+    //     console.log(lobal.a)
+    // })(window)
+    // console.log(a)
+    // 答案：2 1 1
+
+    // 197.画一条0.5px的直线？
+    // height: 1px;
+    // transform: scale(0.5);
+
+    // 198.画一个三角形？
+    // .a{
+    //         width: 0;
+    //         height: 0;
+    //         border-width: 100px;
+    //         border-style: solid;
+    //         border-color: transparent #0099CC transparent transparent;
+    //         transform: rotate(90deg); /*顺时针旋转90°*/
+    // }
+    // <div class="a"></div>
+
+    // 199.下面执行结果是？
+    // function foo(x) {
+    //     var tmp = 3;
+    //     return function (y) {
+    //         alert(x + y + (++tmp));
+    //     }
+    // }
+    // var bar = foo(2); // bar 现在是一个闭包
+    // bar(10);
+    // 答案：16
+    // 解析：es6通常用let const块级作用域代替，闭包缺点，ie中会引起内存泄漏，严格来说是ie的缺点不是闭包的问题
+
+    // 200.请问0.1+0.2等于多少？
+    // 答案：0.30000000000000004
+    // 解析：由于以下两个原因，导致0.1 + 0.2 != 0.3
+    // 1.在十进制转换为二进制的过程中，会产生精度的损失
+    // 2.二进制浮点数进行对阶运算时，也会产生精度的损失
+
 </script>
 
 </html>
