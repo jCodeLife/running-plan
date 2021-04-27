@@ -2205,24 +2205,26 @@
     // 1.在十进制转换为二进制的过程中，会产生精度的损失
     // 2.二进制浮点数进行对阶运算时，也会产生精度的损失
 
-// 105.一道和em有关的题，问s1、s2的font-size和line-height分别是多少px？
-// html结构
-// <div class="p1">
-//     <div class="s1">1</div>
-//     <div class="s2">1</div>
-// </div>
-// 样式
-// .p1 {font-size: 16px; line-height: 32px;}
-// .s1 {font-size: 2em;}
-// .s2 {font-size: 2em; line-height: 2em;}
-// 答案：
-// p1：font-size: 16px; line-height: 32px
-// s1：font-size: 32px; line-height: 32px
-// s2：font-size: 32px; line-height: 64px 
-// 解释：
-// p1 无需解释
-// s1 em作为字体单位，相对于父元素字体大小；line-height继承父元素计算值
-// s2 em作为行高单位时，相对于自身字体大小
+    // 一道和em有关的题，问s1、s2的font-size和line-height分别是多少px？
+    // html结构
+    // <div class="p1">
+    //     <div class="s1">1</div>
+    //     <div class="s2">1</div>
+    // </div>
+    // 样式
+    // .p1 {font-size: 16px; line-height: 32px;}
+    // .s1 {font-size: 2em;}
+    // .s2 {font-size: 2em; line-height: 2em;}
+    // 答案：
+    // p1：font-size: 16px; line-height: 32px
+    // s1：font-size: 32px; line-height: 32px
+    // s2：font-size: 32px; line-height: 64px 
+    // 解释：
+    // p1 无需解释
+    // s1 em作为字体单位，相对于父元素字体大小；line-height继承父元素计算值
+    // s2 em作为行高单位时，相对于自身字体大小
+
+    // ==================================================================================================
 </script>
 
 </html>
