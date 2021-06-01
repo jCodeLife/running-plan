@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+}
+/* 容器 */
+.container {
+    height: 100vh;
+    width: 100vw;
+    background: url(../img/bg/1.jpg) no-repeat;
+    background-size: cover;
+}
+
+/* 晕圈 */
+.container .halo {
+    width: 24vh;
+    height: 24vh;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0  20px rgba(255, 255, 255, .9);
+    box-shadow: 0 0  20px rgba(255, 255, 255, .9) inset;
+}
+
+/* 太阳 */
+.container .halo .sun{
+    width: 5vh;
+    height: 5vh;
+    background-color: #f0f0f6;
+    border-radius: 50%;
+    box-shadow: 0 0  20px rgba(0, 0, 0, .2);
+}
